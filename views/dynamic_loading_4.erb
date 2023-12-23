@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div id="flash-messages" class="large-12 columns">
+    </div>
+  </div>
+  <div class="row">
+    <div id="content" class="large-12 columns">
+      <script>
+          document.title = "Dynamic Loading | Example #4";
+          $(function(){
+              $(document).ready(function(){
+                  $('#start').hide();
+                  $('#start').before("<div id='loading'>Loading... <img src='/img/ajax-loader.gif'></div>");
+                  setTimeout(function() {
+                      $('#loading').hide();
+                      $('#loading').before("<div id='finish' style='display:none'><h4>Hello World!</h4></div>")
+                      $('#finish').show();
+                  } , 5000 );
+              });
+          });
+      </script>
+
+      <div class="example">
+        <h3>Dynamically Loaded Page Elements</h3>
+        <h4>Example 4: Element on the page that is rendered after 5 seconds</h4>
+
+        <br>
+
+        <div id="finish" style=""><h4>Hello World!</h4></div><div id="loading" style="display: none;">Loading... <img src="/img/ajax-loader.gif"></div><div id="start" style="display: none;">
+        <button class="btn btn-primary">Start</button>
+      </div>
+
+
+        <br>
+      </div>
+
+    </div>
+  </div>
+
+</div>

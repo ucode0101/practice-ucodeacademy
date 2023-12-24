@@ -7,17 +7,22 @@
     <div id="content" class="large-12 columns">
       <script>
           document.title = "Dynamic Loading | Example #3";
-          $(function(){
-              $(document).ready(function(){
-                  $('#start').hide();
-                  $('#start').before("<div id='loading'>Loading... <img src='/img/ajax-loader.gif'></div>");
+          $(function() {
+              // Hide the loading message initially
+              $('#loading').hide();
+
+              // Show the loading message, hide the start button, and set a timeout to hide the loading message and show the finish
+              $('#start').on('click', function() {
+                  $('#loading').show();
+                  $(this).hide();
                   setTimeout(function() {
                       $('#loading').hide();
                       $('#finish').show();
-                  } , 5000 );
+                  }, 5000);
               });
           });
       </script>
+
 
       <div class="example">
         <h3>Dynamically Loaded Page Elements</h3>

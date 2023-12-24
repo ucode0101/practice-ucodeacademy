@@ -266,15 +266,15 @@ class Public < Sinatra::Base
 
 
 
-  post "/secure" do
+  post "/secure_dynamic_loading" do
   username = 'tomsmith'
-  password = 'SuperSecretPassword'
+  password = 'SuperSecretPassword!'
 
   if username == params[:username]
     if password == params[:password]
       session[:username] = params[:username]
       flash[:success] = 'You logged into a secure area!'
-      redirect '/secure'
+      redirect '/secure_dynamic_loading'
     else
       flash[:error] = 'Your password is invalid!'
     end

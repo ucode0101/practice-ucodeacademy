@@ -1,17 +1,18 @@
-<script>
-    $(function(){
-        $('#start button').click(function(){
-            $('#start').hide();
-            $('#start').before("<div id='loading'>Loading... <img src='/img/ajax-loader.gif'></div>");
-            setTimeout(function() {
-                $('#loading').hide();
-                $('#finish').show();
-            }, 5000);
-        });
-    });
-</script>
+
 
 <div id="content" class="large-12 columns">
+  <script>
+      $(function(){
+          $('#start button').click(function(){
+              $('#start').hide();
+              $('#start').before("<div id='loading'>Loading... <img src='/img/ajax-loader.gif'></div>");
+              setTimeout(function() {
+                  $('#loading').hide();
+                  $('#finish').show();
+              }, 5000);
+          });
+      });
+  </script>
   <div class="example">
     <h3>Dynamically Loaded Page Elements</h3>
     <h4>Example 4: Element on the page that is rendered after 5 seconds</h4>

@@ -1,44 +1,51 @@
-
-<div id="content" class="large-12 columns">
-  <div class="container">
-    <div class="col-sm-1-12">
-      <div id="alert" class="alert alert-primary">
-        <p><strong id="msg">Loading... Please wait.</strong></p>
-      </div>
+<div class="container">
+  <div class="row">
+    <div id="flash-messages" class="large-12 columns">
     </div>
   </div>
-  <script>
-      document.title = "New tab will be opened in 3 seconds!";
-      window.onload = setTimeout(function openNewTab() {
-          var win = window.open("/new_tab", '_blank');
-          win.focus();
-          document.getElementById("spinner").remove();
-          document.getElementById("alert").remove()
-          document.getElementById("msg").innerText = "Check the new tab!"
-      }, 3000);
-  </script>
+  <div class="row">
+    <div id="content" class="large-12 columns">
+      <div class="container">
+        <div class="col-sm-1-12">
+          <div id="alert" class="alert alert-primary">
+            <p><strong id="msg">Check the new tab!</strong></p>
+          </div>
+        </div>
+      </div>
+      <script>
+          document.title = "New tab will be opened in 3 seconds!";
+          window.onload = setTimeout(function openNewTab() {
+              var win = window.open("/new_tab", '_blank');
+              win.focus();
+              document.getElementById("spinner").remove();
+              document.getElementById("msg").innerText = "Check the new tab!"
+          }, 3000);
+      </script>
+    </div>
+  </div>
 </div>
 
+.alert {
+position: relative;
+}
 
-<!--<div id="content" class="large-12 columns">-->
-<!--  <div class="container">-->
-<!--    <div class="col-sm-1-12">-->
-<!--      <div id="alert" class="alert alert-primary">-->
-<!--        <p><strong id="msg">Check the new tab!</strong></p>-->
+.alert::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255, 0.5); /* Example background color with transparency */
+z-index: -1; /* Place the pseudo-element behind the alert content */
+}
 
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <script>-->
-<!--      document.title = "New tab will be opened in 3 seconds!";-->
-<!--      window.onload = setTimeout(function openNewTab() {-->
-<!--          var win = window.open("/new_tab", '_blank');-->
-<!--          win.focus();-->
-<!--          document.getElementById("spinner").remove();-->
-<!--          document.getElementById("alert").remove()-->
-<!--          document.getElementById("msg").innerText = "Check the new tab!"-->
-
-<!--      }, 3000);-->
-<!--  </script>-->
-
-<!--</div>-->
+.alert::after {
+content: "Loading..."; /* Example content for ::after pseudo-element */
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: #000; /* Example text color */
+font-weight: bold; /* Example font weight */
+}

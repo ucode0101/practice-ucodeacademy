@@ -5,6 +5,39 @@ $(function(){
   $("#table2").tablesorter();
 });
 </script>
+
+
+<!-- Add an ID to the delete links for easier selection -->
+<a href='#' class='delete-link'>delete</a>
+
+<script>
+    $(document).ready(function() {
+        // Attach click event listener to delete links
+        $('.delete-link').click(function(e) {
+            e.preventDefault(); // Prevent the default link behavior
+
+            // Get the ID or other data attribute from the link
+            var itemId = $(this).data('item-id'); // Example: data-item-id='123'
+
+            // Make an AJAX request to delete the item
+            $.ajax({
+                url: '/delete_item', // Replace with your server-side delete endpoint
+                method: 'POST',
+                data: { id: itemId }, // Example: send item ID to server
+                success: function(response) {
+                    // Handle successful deletion
+                    // Update the table or UI as needed
+                },
+                error: function(xhr, status, error) {
+                    // Handle error
+                    console.error('Error:', error);
+                }
+            });
+        });
+    });
+</script>
+
+
 <style>
   span {
     padding-right: 20px;

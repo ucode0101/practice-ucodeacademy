@@ -10,10 +10,7 @@
   <script>
       document.title = "New tab will be opened in 3 seconds!";
       setTimeout(function() {
-          var win = window.open("/new_tab", '_blank');
-          win.addEventListener("load", function() {
-              win.document.getElementById("msg").innerText = "Check the new tab!";
-          });
+          var win = window.open("/new_tab?message=Check the new tab!", '_blank');
           document.getElementById("alert").remove();
       }, 3000);
   </script>

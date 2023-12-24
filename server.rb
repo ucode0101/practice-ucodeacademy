@@ -579,4 +579,7 @@ class Public < Sinatra::Base
     erb :registration_form
   end
 
+  get '/registrationForm' do
+    erb :registration_confirmation
+  end
 end

@@ -18,7 +18,16 @@
               win.focus();
               document.getElementById("alert").remove();
               document.getElementById("msg").innerText = "A new tab opened";
+
+              // Send a message to the new tab
+              win.postMessage("Hello from the original tab!", "*");
           }, 3000);
+
+          // Listen for messages from the new tab
+          window.addEventListener("message", function(event) {
+              if (event.origin !== window.location.origin) return; // Security check
+              console.log("Message received from new tab:", event.data);
+          });
       </script>
     </div>
   </div>

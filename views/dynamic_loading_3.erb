@@ -1,75 +1,59 @@
-<div class="container">
-  <div class="row">
-    <div id="flash-messages" class="large-12 columns">
-    </div>
-  </div>
-  <div class="row">
-    <div id="content" class="large-12 columns">
-      <script>
-          document.title = "Dynamic Loading | Example #3";
-          $(function() {
-              // Hide the loading message initially
+<div id="content" class="large-12 columns">
+  <script>
+      document.title = "Dynamic Loading | Example #3";
+      $(function() {
+          $('#start').hide();
+          $('#start').before("<div id='loading'>Loading... <img src='/img/ajax-loader.gif'></div>");
+          setTimeout(function() {
               $('#loading').hide();
+              $('#finish').show();
+          }, 5000);
+      });
+  </script>
 
-              // Show the loading message, hide the start button, and set a timeout to hide the loading message and show the finish
-              $('#start').on('click', function() {
-                  $('#loading').show();
-                  $(this).hide();
-                  setTimeout(function() {
-                      $('#loading').hide();
-                      $('#finish').show();
-                  }, 5000);
-              });
-          });
-      </script>
+  <div class="example">
+    <h3>Dynamically Loaded Page Elements</h3>
+    <h4>Example 3: Element on page that is hidden and becomes visible after 5 seconds</h4>
 
+    <br>
 
-      <div class="example">
-        <h3>Dynamically Loaded Page Elements</h3>
-        <h4>Example 3: Element on page that is hidden and become visible after 5 seconds</h4>
-
-        <br>
-
-        <div id="loading" style="display: none;">Loading... <img src="/img/ajax-loader.gif"></div><div id="start" style="display: none;">
-        <button class="btn btn-primary">Start</button>
-      </div>
-
-        <div id="finish" style="">
-          <h4>Hello World!</h4>
-          <h6>Enter <em>tomsmith</em> for the username and <em>SuperSecretPassword</em> for the password.</h6>
-          <br>
-          <form name="login" id="login" action="/authenticate_dynamic_loading_3" method="post">
-            <div class="form-group">
-              <label class="control-label col-sm-2" for="username">Username:</label>
-              <div class="col-sm-6">
-                <input type="username" class="form-control" id="username" name="username" placeholder="Enter username">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-sm-2" for="pwd">Password:</label>
-              <div class="col-sm-6">
-                <input type="password" class="form-control" id="pwd" name="password" placeholder="Enter password">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox">
-                  <label><input type="checkbox"> Remember me</label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </div>
-          </form>
-        </div>
-
-
-      </div>
-
+    <div id="loading" style="display: none;">Loading... <img src="/img/ajax-loader.gif"></div>
+    <div id="start" style="display: none;">
+      <button class="btn btn-primary">Start</button>
     </div>
+
+    <div id="finish" style="display: none;">
+      <h4>Hello World!</h4>
+      <h6>Enter <em>tomsmith</em> for the username and <em>SuperSecretPassword</em> for the password.</h6>
+      <br>
+      <form name="login" id="login" action="/authenticate_dynamic_loading_3" method="post">
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="username">Username:</label>
+          <div class="col-sm-6">
+            <input type="username" class="form-control" id="username" name="username" placeholder="Enter username">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="pwd">Password:</label>
+          <div class="col-sm-6">
+            <input type="password" class="form-control" id="pwd" name="password" placeholder="Enter password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+              <label><input type="checkbox"> Remember me</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
   </div>
 
 </div>

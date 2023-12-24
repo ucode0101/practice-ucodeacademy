@@ -9,12 +9,11 @@
   </div>
   <script>
       document.title = "New tab will be opened in 3 seconds!";
-      window.onload = setTimeout(function openNewTab() {
+      setTimeout(function() {
           var win = window.open("/new_tab", '_blank');
           win.focus();
-          document.getElementById("spinner").remove();
-          document.getElementById("alert").remove()
-          document.getElementById("msg").innerText = "Check the new tab!"
+          document.getElementById("alert").remove();
+          document.getElementById("msg").innerText = "Check the new tab!";
       }, 3000);
   </script>
 </div>

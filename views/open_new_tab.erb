@@ -15,12 +15,19 @@
       <script>
           setTimeout(function openNewTab() {
               var win = window.open("/new_tab", '_blank');
-              win.focus();
               document.getElementById("alert").remove();
               document.getElementById("msg").innerText = "A new tab opened";
 
-              // Send a message to the new tab
-              win.postMessage("Hello from the original tab!", "*");
+              // Check if the new tab is successfully opened
+              if (win) {
+                  win.onload = function() {
+                      // Send a message to the new tab
+                      win.postMessage("Hello from the original tab!", window.location.origin);
+                  };
+              } else {
+                  // Handle cases where the new tab couldn't be opened
+                  console.error("Failed to open new tab");
+              }
           }, 3000);
 
           // Listen for messages from the new tab
@@ -32,7 +39,6 @@
     </div>
   </div>
 </div>
-
 
 
 

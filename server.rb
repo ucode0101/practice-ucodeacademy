@@ -571,4 +571,8 @@ class Public < Sinatra::Base
     erb :new_tab
   end
 
+  get '/radio_buttons' do
+    erb :radio_buttons
+  end
+
 end

@@ -10,11 +10,13 @@
   <script>
       document.title = "New tab will be opened in 3 seconds!";
       setTimeout(function() {
-          var win = window.open("/new_tab?message=Check the new tab!", '_blank');
+          var win = window.open("/new_tab", '_blank');
+          win.postMessage("Check the new tab!", "*");
           document.getElementById("alert").remove();
       }, 3000);
   </script>
 </div>
+
 
 <!--<div class="row">-->
 <!--  <div id="content" class="large-12 columns">-->

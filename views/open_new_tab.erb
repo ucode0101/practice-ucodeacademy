@@ -1,6 +1,37 @@
 
 
 
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div id="flash-messages" class="large-12 columns">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="row">-->
+<!--    <div id="content" class="large-12 columns">-->
+<!--      <div class="container">-->
+<!--        <div class="col-sm-1-12">-->
+<!--          <div id="alert" class="alert alert-primary">-->
+<!--            <p><strong id="msg">Check the new tab!</strong></p>-->
+
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <script>-->
+<!--          document.title = "New tab will be opened in 3 seconds!";-->
+<!--          window.onload = setTimeout(function openNewTab() {-->
+<!--              var win = window.open("/new_tab", '_blank');-->
+<!--              win.focus();-->
+<!--              document.getElementById("spinner").remove();-->
+<!--              document.getElementById("msg").innerText = "Check the new tab!"-->
+<!--          }, 3000);-->
+<!--      </script>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+
 <div class="container">
   <div class="row">
     <div id="flash-messages" class="large-12 columns">
@@ -11,19 +42,31 @@
       <div class="container">
         <div class="col-sm-1-12">
           <div id="alert" class="alert alert-primary">
-            <p><strong id="msg">Check the new tab!</strong></p>
-
+            <p><strong id="msg">Check the new tab in 3 seconds!</strong></p>
           </div>
         </div>
       </div>
       <script>
           document.title = "New tab will be opened in 3 seconds!";
           window.onload = setTimeout(function openNewTab() {
+              // Store the message in localStorage
+              localStorage.setItem('message', 'Check the new tab!');
+
               var win = window.open("/new_tab", '_blank');
               win.focus();
-              document.getElementById("spinner").remove();
-              document.getElementById("msg").innerText = "Check the new tab!"
           }, 3000);
+
+          // Listen for messages from the new tab
+          window.addEventListener('message', function(event) {
+              if (event.origin !== window.location.origin) return; // Security check
+              if (event.data === 'tabOpened') {
+                  // Retrieve the message from localStorage and update the UI
+                  var storedMessage = localStorage.getItem('message');
+                  if (storedMessage) {
+                      document.getElementById('msg').innerText = storedMessage;
+                  }
+              }
+          });
       </script>
     </div>
   </div>

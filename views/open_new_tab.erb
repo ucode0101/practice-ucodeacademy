@@ -27,6 +27,35 @@
 <!--  </style>-->
 
 
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div id="flash-messages" class="large-12 columns">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="row">-->
+<!--    <div id="content" class="large-12 columns">-->
+<!--      <div class="container">-->
+<!--        <div class="col-sm-1-12">-->
+<!--          <div id="alert" class="alert alert-primary">-->
+<!--            <p><strong id="msg">Check the new tab in 3 seconds!</strong></p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <script>-->
+<!--          setTimeout(function openNewTab() {-->
+<!--              var win = window.open("/new_tab", '_blank');-->
+<!--              win.addEventListener('load', function () {-->
+<!--                  document.getElementById("alert").remove();-->
+<!--                  document.getElementById("msg").innerText = "A new tab opened";-->
+<!--              });-->
+<!--          }, 3000);-->
+<!--      </script>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
 <div class="container">
   <div class="row">
     <div id="flash-messages" class="large-12 columns">
@@ -37,19 +66,27 @@
       <div class="container">
         <div class="col-sm-1-12">
           <div id="alert" class="alert alert-primary">
-            <p><strong id="msg">Check the new tab in 3 seconds!</strong></p>
+            <p><strong id="msg">Check the new tab!</strong></p>
+
           </div>
         </div>
       </div>
       <script>
-          setTimeout(function openNewTab() {
+          document.title = "New tab will be opened in 3 seconds!";
+          window.onload = setTimeout(function openNewTab() {
               var win = window.open("/new_tab", '_blank');
-              win.addEventListener('load', function () {
-                  document.getElementById("alert").remove();
-                  document.getElementById("msg").innerText = "A new tab opened";
-              });
+              win.focus();
+              document.getElementById("spinner").remove();
+              document.getElementById("msg").innerText = "Check the new tab!"
           }, 3000);
       </script>
+
+    </div>
+  </div>
+  <div id="page-footer" class="row">
+    <div class="large-4 large-centered columns">
+      <hr>
+<!--      <div style="text-align: center;">Powered by <a target="_blank" href="https://cydeo.com/">CYDEO</a></div>-->
     </div>
   </div>
 </div>

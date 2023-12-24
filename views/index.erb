@@ -1,10 +1,47 @@
+<!--<style>-->
+<!--ul {-->
+<!--  list-style-type: none;-->
+<!--  margin: 0;-->
+<!--  padding: 0;-->
+<!--}-->
+<!--</style>-->
+
 <style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
+    /* Reset default list styles */
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    /* Style for the heading */
+    h2.heading {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333; /* Change the color as needed */
+        margin-bottom: 10px;
+    }
+    /* Style for the subheading */
+    h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #555; /* Change the color as needed */
+        margin-bottom: 10px;
+    }
+    /* Style for the list items */
+    ul li {
+        margin-bottom: 5px;
+    }
+    /* Style for the links in the list */
+    ul li a {
+        text-decoration: none;
+        color: #007bff; /* Change the color as needed */
+    }
+    /* Hover effect for the links */
+    ul li a:hover {
+        text-decoration: underline;
+    }
 </style>
+
 <h2 class="heading">U-Code Academy Automation Practice</h2>
 <h3>Available Examples</h3>
 <%= erb :examples %>

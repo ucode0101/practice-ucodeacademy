@@ -1,4 +1,5 @@
-
+<div class="row">
+  <div id="content" class="large-12 columns">
     <script>
         document.title = "Dynamic Loading | Example #3";
         $(function(){
@@ -8,7 +9,7 @@
                 setTimeout(function() {
                     $('#loading').hide();
                     $('#finish').show();
-                }, 5000);
+                } , 5000 );
             });
         });
     </script>
@@ -19,10 +20,9 @@
 
       <br>
 
-      <div id="loading" style="display: none;">Loading... <img src="/img/ajax-loader.gif"></div>
-      <div id="start" style="display: none;">
-        <button class="btn btn-primary">Start</button>
-      </div>
+      <div id="loading" style="display: none;">Loading... <img src="/img/ajax-loader.gif"></div><div id="start" style="display: none;">
+      <button class="btn btn-primary">Start</button>
+    </div>
 
       <div id="finish" style="">
         <h4>Hello World!</h4>
@@ -55,4 +55,9 @@
           </div>
         </form>
       </div>
+
+
     </div>
+
+  </div>
+</div>

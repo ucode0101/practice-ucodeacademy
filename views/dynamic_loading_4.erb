@@ -6,19 +6,17 @@
   <div class="row">
     <div id="content" class="large-12 columns">
       <script>
-          document.title = "Dynamic Loading | Example #4";
-          $(function(){
-              $(document).ready(function(){
-                  $('#start').hide();
-                  $('#start').before("<div id='loading'>Loading... <img src='/img/ajax-loader.gif'></div>");
-                  setTimeout(function() {
-                      $('#loading').hide();
-                      $('#loading').before("<div id='finish' style='display:none'><h4>Hello World!</h4></div>")
-                      $('#finish').show();
-                  } , 5000 );
-              });
+          document.title = "Dynamic Loading | Example #3";
+          $(function() {
+              $('#start').hide();
+              $('#start').before("<div id='loading'>Loading... <img src='/img/ajax-loader.gif'></div>");
+              setTimeout(function() {
+                  $('#loading').hide();
+                  $('#finish').show();
+              }, 5000);
           });
       </script>
+
 
       <div class="example">
         <h3>Dynamically Loaded Page Elements</h3>

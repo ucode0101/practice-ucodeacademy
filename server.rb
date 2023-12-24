@@ -562,7 +562,13 @@ class Public < Sinatra::Base
   get '/multiple_buttons' do
     erb :multiple_buttons
   end
+
   get '/open_new_tab' do
     erb :open_new_tab
   end
+
+  get '/new_tab' do
+    erb :new_tab
+  end
+
 end

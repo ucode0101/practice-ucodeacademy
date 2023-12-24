@@ -147,6 +147,7 @@ class Public < Sinatra::Base
     erb :jqueryui
   end
 
+
   get '/windows' do
     erb :windows
   end
@@ -556,5 +557,9 @@ class Public < Sinatra::Base
 
   get '/inputs' do
     erb :inputs
+  end
+
+  get '/multiple_buttons' do
+    erb :multiple_buttons
   end
 end

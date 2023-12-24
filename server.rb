@@ -293,6 +293,26 @@ class Public < Sinatra::Base
     erb :dynamic_loading_2
   end
 
+  get '/dynamic_loading/3' do
+    erb :dynamic_loading_3
+  end
+
+  get '/dynamic_loading/4' do
+    erb :dynamic_loading_4
+  end
+
+  get '/dynamic_loading/5' do
+    erb :dynamic_loading_5
+  end
+
+  get '/dynamic_loading/6' do
+    erb :dynamic_loading_6
+  end
+
+  get '/dynamic_loading/7' do
+    erb :dynamic_loading_7
+  end
+
   get '/tables' do
     erb :tables
   end

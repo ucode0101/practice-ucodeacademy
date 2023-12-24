@@ -274,7 +274,7 @@ class Public < Sinatra::Base
     if password == params[:password]
       session[:username] = params[:username]
       flash[:success] = 'You logged into a secure area!'
-      redirect '/secure_dynamic_loading'
+      redirect '/secure'
     else
       flash[:error] = 'Your password is invalid!'
     end

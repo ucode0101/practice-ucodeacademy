@@ -1,12 +1,13 @@
 <div id="content" class="large-12 columns">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
       document.title = "Dynamic Loading | Example #3";
-      $(function() {
+      $(document).ready(function() {
+          $('#loading').show(); // Show the loading element initially
           $('#start').hide();
-          $('#start').before("<div id='loading'>Loading... <img src='/img/ajax-loader.gif'></div>");
           setTimeout(function() {
-              $('#loading').hide();
-              $('#finish').show();
+              $('#loading').hide(); // Hide the loading element after 5 seconds
+              $('#finish').show(); // Show the finish element after hiding the loading element
           }, 5000);
       });
   </script>
@@ -17,7 +18,7 @@
 
     <br>
 
-    <div id="loading" style="display: none;">Loading... <img src="/img/ajax-loader.gif"></div>
+    <div id="loading">Loading... <img src="/img/ajax-loader.gif"></div>
     <div id="start" style="display: none;">
       <button class="btn btn-primary">Start</button>
     </div>
@@ -57,3 +58,4 @@
   </div>
 
 </div>
+

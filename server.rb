@@ -588,16 +588,12 @@ class Public < Sinatra::Base
   end
 
   post '/registration_form' do
-    # Process the form data here if needed
-    # For example, you can access form parameters using params[:param_name]
-
-    # Redirect to the confirmation page
+    # ... handle form submission ...
     redirect '/registration_confirmation'
   end
 
-  # Define route for the confirmation page
   get '/registration_confirmation' do
-    # Render the confirmation page here
     erb :registration_confirmation
   end
+
 end

@@ -529,7 +529,7 @@ class Public < Sinatra::Base
   end
 
   get '/infinite_scroll/:number' do |number|
-    "<br />#{Faker::Lorem.sentence(300)}\
+    "<br />#{Faker::Lorem.sentence(300)}
     <a href='/infinite_scroll/#{number.to_i + 1}'>next page</a>"
   end
 

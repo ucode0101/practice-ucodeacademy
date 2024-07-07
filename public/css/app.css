@@ -353,12 +353,12 @@ html input[disabled] {
  */
 /* line 351, ../../views/scss/_normalize.scss */
 input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
+/*input[type="radio"] {*/
+/*  box-sizing: border-box;*/
+/*  !* 1 *!*/
+/*  padding: 0;*/
+/*  !* 2 *!*/
+/*}*/
 /*Just added */
 input[type="radio"] {
   margin-right: 5px; /* Adjust as needed for spacing between radio button and text */

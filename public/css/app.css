@@ -359,8 +359,16 @@ input[type="checkbox"],
 /*  padding: 0;*/
 /*  !* 2 *!*/
 /*}*/
-/*Just added */
+
+/*label {*/
+/*  vertical-align: middle; !* Align label vertically with radio button *!*/
+/*}*/
+
+
+  /* Ensure box-sizing and padding are not causing unexpected layout issues */
 input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
   margin-right: 5px; /* Adjust as needed for spacing between radio button and text */
   vertical-align: middle; /* Align radio button vertically with text */
 }

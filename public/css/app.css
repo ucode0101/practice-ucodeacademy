@@ -359,6 +359,16 @@ input[type="radio"] {
   padding: 0;
   /* 2 */
 }
+/*Just added */
+input[type="radio"] {
+  margin-right: 5px; /* Adjust as needed for spacing between radio button and text */
+  vertical-align: middle; /* Align radio button vertically with text */
+}
+
+label {
+  vertical-align: middle; /* Align label vertically with radio button */
+}
+
 
 /**
  * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.

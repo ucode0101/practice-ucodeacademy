@@ -575,9 +575,6 @@ class Public < Sinatra::Base
     erb :radio_buttons
   end
 
-  get '/radio_buttons2' do
-    erb :radio_buttons2
-  end
 
   get '/registration_form' do
     erb :registration_form

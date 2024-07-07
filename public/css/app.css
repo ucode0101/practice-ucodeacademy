@@ -360,14 +360,6 @@ input[type="radio"] {
   /* 2 */
 }
 
-label {
-  vertical-align: middle; /* Align label vertically with radio button */
-}
-
-
-
-
-
 /**
  * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome

@@ -352,40 +352,18 @@ html input[disabled] {
  * 2. Remove excess padding in IE 8/9.
  */
 /* line 351, ../../views/scss/_normalize.scss */
-/*input[type="checkbox"],*/
-/*input[type="radio"] {*/
-/*  box-sizing: border-box;*/
-/*  !* 1 *!*/
-/*  padding: 0;*/
-/*  !* 2 *!*/
-/*}*/
-
-/*label {*/
-/*  vertical-align: middle; !* Align label vertically with radio button *!*/
-/*}*/
-
-
-
-
-/* Reset margins and paddings for form elements */
-input[type="radio"],
 input[type="checkbox"],
-input[type="file"],
-select {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Align radio buttons and labels */
 input[type="radio"] {
-  vertical-align: middle; /* Align radio button vertically with text */
-  margin-right: 5px; /* Adjust as needed for spacing between radio button and text */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 label {
   vertical-align: middle; /* Align label vertically with radio button */
 }
+
 
 
 
@@ -3041,12 +3019,12 @@ textarea[disabled] {
 
 /* Adjust margin for form elements below */
 /* line 349, ../../../../../.rvm/gems/ruby-1.9.3-p448@the-internet/gems/zurb-foundation-4.3.2/scss/foundation/components/_forms.scss */
-/*input[type="file"],*/
-/*input[type="checkbox"],*/
-/*input[type="radio"],*/
-/*select {*/
-/*  margin: 0 0 1em 0;*/
-/*}*/
+input[type="file"],
+input[type="checkbox"],
+input[type="radio"],
+select {
+  margin: 0 0 1em 0;
+}
 
 /* Normalize file input width */
 /* line 354, ../../../../../.rvm/gems/ruby-1.9.3-p448@the-internet/gems/zurb-foundation-4.3.2/scss/foundation/components/_forms.scss */

@@ -79,15 +79,25 @@
 </div>
 
 <style>
-    .form-check-input {
+    .custom-control-input {
         display: inline-block;
         vertical-align: middle;
         margin-right: 5px;
     }
 
-    .form-check-label {
+    .custom-control-label {
         display: inline-block;
         vertical-align: middle;
         margin-bottom: 0;
+    }
+
+    .disabled .custom-control-input {
+        opacity: 0.5; /* Example for disabled look */
+        cursor: not-allowed; /* Example for disabled cursor */
+    }
+
+    .disabled .custom-control-label {
+        opacity: 0.5; /* Example for disabled look */
+        cursor: not-allowed; /* Example for disabled cursor */
     }
 </style>

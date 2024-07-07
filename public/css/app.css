@@ -360,22 +360,11 @@ input[type="checkbox"],
 /*  !* 2 *!*/
 /*}*/
 
-/*label {*/
-/*  vertical-align: middle; !* Align label vertically with radio button *!*/
-/*}*/
-
-
-  /* Ensure box-sizing and padding are not causing unexpected layout issues */
-input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-  margin-right: 5px; /* Adjust as needed for spacing between radio button and text */
-  vertical-align: middle; /* Align radio button vertically with text */
-}
-
 label {
   vertical-align: middle; /* Align label vertically with radio button */
 }
+
+
 
 
 /**
@@ -3031,7 +3020,7 @@ textarea[disabled] {
 /* line 349, ../../../../../.rvm/gems/ruby-1.9.3-p448@the-internet/gems/zurb-foundation-4.3.2/scss/foundation/components/_forms.scss */
 input[type="file"],
 input[type="checkbox"],
-input[type="radio"],
+/*input[type="radio"],*/
 select {
   margin: 0 0 1em 0;
 }

@@ -362,17 +362,6 @@ input[type="radio"] {
 
 
 
-
-input[type="checkbox"]:disabled + label {
-  color: gray; /* Makes the text of disabled checkboxes grayed out */
-}
-
-input[type="checkbox"]:disabled {
-  opacity: 0.5; /* Makes the checkbox itself appear grayed out */
-}
-
-
-
 /**
  * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome

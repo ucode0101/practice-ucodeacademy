@@ -131,7 +131,6 @@
 <!--</html>-->
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -234,6 +233,11 @@
             buttons[i].addEventListener('click', function () {
                 if (this.classList.contains('disabled')) return;
 
+                // Disable all buttons
+                for (var j = 0; j < buttons.length; j++) {
+                    buttons[j].classList.add('disabled');
+                }
+
                 var button = this;
                 var buttonNumber = button.getAttribute('data-button');
                 var countdown = document.querySelector('.countdown[data-countdown="' + buttonNumber + '"]');
@@ -253,9 +257,11 @@
 
                     if (secondsLeft < 0) {
                         clearInterval(interval);
-                        button.classList.remove('disabled');
+                        // Re-enable all buttons
+                        for (var j = 0; j < buttons.length; j++) {
+                            buttons[j].classList.remove('disabled');
+                        }
                         countdown.textContent = '';
-                        button.textContent = 'Button ' + buttonNumber;
                         clickMessage.textContent = ''; // Clear click message
                     }
                 }, 1000);
@@ -266,3 +272,4 @@
 
 </body>
 </html>
+

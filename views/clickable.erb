@@ -33,6 +33,12 @@
           color: red;
           height: 18px; /* Adjust this height to ensure alignment */
       }
+
+      #initial-countdown {
+          margin-top: 20px;
+          font-size: 16px;
+          color: blue;
+      }
   </style>
 </head>
 <body>
@@ -52,12 +58,34 @@
     <div class="countdown" data-countdown="3" style="opacity: 0.3"></div>
   </div>
 </div>
+<div id="initial-countdown">Buttons will be clickable in 10 seconds...</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var buttons = document.getElementsByClassName('button-like');
-        var countdowns = document.getElementsByClassName('countdown');
+        var initialCountdown = document.getElementById('initial-countdown');
+        var initialSecondsLeft = 10;
 
+        // Disable all buttons initially
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.add('disabled');
+        }
+
+        // Initial countdown to enable buttons
+        var initialInterval = setInterval(function () {
+            initialCountdown.textContent = 'Buttons will be clickable in ' + initialSecondsLeft + ' seconds...';
+            initialSecondsLeft--;
+
+            if (initialSecondsLeft < 0) {
+                clearInterval(initialInterval);
+                initialCountdown.textContent = '';
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].classList.remove('disabled');
+                }
+            }
+        }, 1000);
+
+        // Individual button click handlers
         for (var i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener('click', function () {
                 if (this.classList.contains('disabled')) return;

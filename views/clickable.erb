@@ -39,6 +39,12 @@
           font-size: 16px;
           color: blue;
       }
+
+      #click-message {
+          margin-top: 20px;
+          font-size: 16px;
+          color: green;
+      }
   </style>
 </head>
 <body>
@@ -59,11 +65,13 @@
   </div>
 </div>
 <div id="initial-countdown">Buttons will be clickable in 10 seconds...</div>
+<div id="click-message"></div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var buttons = document.getElementsByClassName('button-like');
         var initialCountdown = document.getElementById('initial-countdown');
+        var clickMessage = document.getElementById('click-message');
         var initialSecondsLeft = 10;
 
         // Disable all buttons initially
@@ -97,6 +105,9 @@
                 button.classList.add('disabled');
                 var secondsLeft = 5;
 
+                // Display click message
+                clickMessage.textContent = 'You clicked on Button ' + buttonNumber;
+
                 var interval = setInterval(function () {
                     countdown.textContent = 'Wait ' + secondsLeft + ' seconds...';
                     secondsLeft--;
@@ -106,6 +117,7 @@
                         button.classList.remove('disabled');
                         countdown.textContent = '';
                         button.textContent = 'Button ' + buttonNumber;
+                        clickMessage.textContent = ''; // Clear click message
                     }
                 }, 1000);
             });

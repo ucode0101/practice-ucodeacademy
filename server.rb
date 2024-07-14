@@ -559,6 +559,10 @@ class Public < Sinatra::Base
     erb :inputs
   end
 
+  get '/clickable' do
+    erb :clickable
+  end
+
   get '/multiple_buttons' do
     erb :multiple_buttons
   end

@@ -130,7 +130,6 @@
 <!--</html>-->
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -151,12 +150,15 @@
           border: 1px solid #000;
           border-radius: 5px;
           background-color: #f0f0f0;
+          color: #000;
           cursor: pointer;
           user-select: none;
+          transition: background-color 0.3s, color 0.3s;
       }
 
       button:disabled {
           background-color: #ccc;
+          color: #888;
           cursor: not-allowed;
       }
 

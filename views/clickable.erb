@@ -1,4 +1,146 @@
 
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--  <title>Buttons with Countdown</title>-->
+<!--  <style>-->
+<!--      .button-container {-->
+<!--          display: inline-block;-->
+<!--          margin: 5px;-->
+<!--          text-align: center;-->
+<!--          vertical-align: top;-->
+<!--      }-->
+
+<!--      .button-like {-->
+<!--          display: block;-->
+<!--          padding: 10px 20px;-->
+<!--          border: 1px solid #000;-->
+<!--          border-radius: 5px;-->
+<!--          background-color: #f0f0f0;-->
+<!--          cursor: pointer;-->
+<!--          user-select: none;-->
+<!--      }-->
+
+<!--      .button-like.disabled {-->
+<!--          background-color: #ccc;-->
+<!--          cursor: not-allowed;-->
+<!--      }-->
+
+<!--      .countdown {-->
+<!--          margin-top: 5px;-->
+<!--          font-size: 14px;-->
+<!--          color: red;-->
+<!--          height: 18px; /* Adjust this height to ensure alignment */-->
+<!--      }-->
+
+<!--      #initial-countdown {-->
+<!--          margin-top: 20px;-->
+<!--          font-size: 16px;-->
+<!--          color: blue;-->
+<!--      }-->
+
+<!--      #click-message {-->
+<!--          margin-top: 20px;-->
+<!--          font-size: 16px;-->
+<!--          color: green;-->
+<!--      }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div class="example">-->
+<!--  <h3>Buttons</h3>-->
+<!--  <h6>Buttons will be Clickable in 5 seconds when the page is loaded or refreshed</h6>-->
+<!--  <h6>Buttons will be Clickable after 5 seconds when you click on a button</h6>-->
+<!--  <div class="button-container">-->
+<!--    <div class="button-like" data-button="1">Button 1</div>-->
+<!--    <div class="countdown" data-countdown="1"></div>-->
+<!--  </div>-->
+<!--  <div class="button-container">-->
+<!--    <div class="button-like" data-button="2">Button 2</div>-->
+<!--    <div class="countdown" data-countdown="2"></div>-->
+<!--  </div>-->
+<!--  <div class="button-container">-->
+<!--    <div class="button-like" data-button="3">Button 3</div>-->
+<!--    <div class="countdown" data-countdown="3"></div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div id="initial-countdown">Buttons will be clickable in 5 seconds...</div>-->
+<!--<div id="click-message"></div>-->
+
+<!--<script>-->
+<!--    document.addEventListener('DOMContentLoaded', function () {-->
+<!--        var buttons = document.getElementsByClassName('button-like');-->
+<!--        var initialCountdown = document.getElementById('initial-countdown');-->
+<!--        var clickMessage = document.getElementById('click-message');-->
+<!--        var initialSecondsLeft = 5;-->
+
+<!--        // Disable all buttons initially-->
+<!--        for (var i = 0; i < buttons.length; i++) {-->
+<!--            buttons[i].classList.add('disabled');-->
+<!--        }-->
+
+<!--        // Initial countdown to enable buttons-->
+<!--        var initialInterval = setInterval(function () {-->
+<!--            initialCountdown.textContent = 'Buttons will be clickable in ' + initialSecondsLeft + ' seconds...';-->
+<!--            initialSecondsLeft--;-->
+
+<!--            if (initialSecondsLeft < 0) {-->
+<!--                clearInterval(initialInterval);-->
+<!--                initialCountdown.textContent = '';-->
+<!--                for (var i = 0; i < buttons.length; i++) {-->
+<!--                    buttons[i].classList.remove('disabled');-->
+<!--                }-->
+<!--            }-->
+<!--        }, 1000);-->
+
+<!--        // Individual button click handlers-->
+<!--        for (var i = 0; i < buttons.length; i++) {-->
+<!--            buttons[i].addEventListener('click', function () {-->
+<!--                if (this.classList.contains('disabled')) return;-->
+
+<!--                // Disable all buttons-->
+<!--                for (var j = 0; j < buttons.length; j++) {-->
+<!--                    buttons[j].classList.add('disabled');-->
+<!--                }-->
+
+<!--                var button = this;-->
+<!--                var buttonNumber = button.getAttribute('data-button');-->
+<!--                var countdown = document.querySelector('.countdown[data-countdown="' + buttonNumber + '"]');-->
+
+<!--                button.classList.add('disabled');-->
+<!--                var secondsLeft = 5;-->
+
+<!--                // Display click message-->
+<!--                clickMessage.textContent = 'You clicked on Button ' + buttonNumber;-->
+
+<!--                // Start the countdown immediately-->
+<!--                countdown.textContent = 'Wait ' + secondsLeft + ' seconds...';-->
+
+<!--                var interval = setInterval(function () {-->
+<!--                    secondsLeft--;-->
+<!--                    countdown.textContent = 'Wait ' + secondsLeft + ' seconds...';-->
+
+<!--                    if (secondsLeft < 0) {-->
+<!--                        clearInterval(interval);-->
+<!--                        // Re-enable all buttons-->
+<!--                        for (var j = 0; j < buttons.length; j++) {-->
+<!--                            buttons[j].classList.remove('disabled');-->
+<!--                        }-->
+<!--                        countdown.textContent = '';-->
+<!--                        clickMessage.textContent = ''; // Clear click message-->
+<!--                    }-->
+<!--                }, 1000);-->
+<!--            });-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +155,7 @@
           vertical-align: top;
       }
 
-      .button-like {
+      button {
           display: block;
           padding: 10px 20px;
           border: 1px solid #000;
@@ -23,7 +165,7 @@
           user-select: none;
       }
 
-      .button-like.disabled {
+      button:disabled {
           background-color: #ccc;
           cursor: not-allowed;
       }
@@ -55,15 +197,15 @@
   <h6>Buttons will be Clickable in 5 seconds when the page is loaded or refreshed</h6>
   <h6>Buttons will be Clickable after 5 seconds when you click on a button</h6>
   <div class="button-container">
-    <div class="button-like" data-button="1">Button 1</div>
+    <button data-button="1" disabled>Button 1</button>
     <div class="countdown" data-countdown="1"></div>
   </div>
   <div class="button-container">
-    <div class="button-like" data-button="2">Button 2</div>
+    <button data-button="2" disabled>Button 2</button>
     <div class="countdown" data-countdown="2"></div>
   </div>
   <div class="button-container">
-    <div class="button-like" data-button="3">Button 3</div>
+    <button data-button="3" disabled>Button 3</button>
     <div class="countdown" data-countdown="3"></div>
   </div>
 </div>
@@ -72,15 +214,10 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        var buttons = document.getElementsByClassName('button-like');
+        var buttons = document.querySelectorAll('button');
         var initialCountdown = document.getElementById('initial-countdown');
         var clickMessage = document.getElementById('click-message');
         var initialSecondsLeft = 5;
-
-        // Disable all buttons initially
-        for (var i = 0; i < buttons.length; i++) {
-            buttons[i].classList.add('disabled');
-        }
 
         // Initial countdown to enable buttons
         var initialInterval = setInterval(function () {
@@ -90,27 +227,21 @@
             if (initialSecondsLeft < 0) {
                 clearInterval(initialInterval);
                 initialCountdown.textContent = '';
-                for (var i = 0; i < buttons.length; i++) {
-                    buttons[i].classList.remove('disabled');
-                }
+                buttons.forEach(button => button.disabled = false);
             }
         }, 1000);
 
         // Individual button click handlers
-        for (var i = 0; i < buttons.length; i++) {
-            buttons[i].addEventListener('click', function () {
-                if (this.classList.contains('disabled')) return;
+        buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                if (this.disabled) return;
 
                 // Disable all buttons
-                for (var j = 0; j < buttons.length; j++) {
-                    buttons[j].classList.add('disabled');
-                }
+                buttons.forEach(btn => btn.disabled = true);
 
-                var button = this;
-                var buttonNumber = button.getAttribute('data-button');
+                var buttonNumber = this.getAttribute('data-button');
                 var countdown = document.querySelector('.countdown[data-countdown="' + buttonNumber + '"]');
 
-                button.classList.add('disabled');
                 var secondsLeft = 5;
 
                 // Display click message
@@ -126,15 +257,13 @@
                     if (secondsLeft < 0) {
                         clearInterval(interval);
                         // Re-enable all buttons
-                        for (var j = 0; j < buttons.length; j++) {
-                            buttons[j].classList.remove('disabled');
-                        }
+                        buttons.forEach(btn => btn.disabled = false);
                         countdown.textContent = '';
                         clickMessage.textContent = ''; // Clear click message
                     }
                 }, 1000);
             });
-        }
+        });
     });
 </script>
 

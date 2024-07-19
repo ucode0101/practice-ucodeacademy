@@ -1,8 +1,8 @@
 
-<div class="example">
-  <h3>Context Menu</h3>
-  <p>Context menu items are custom additions that appear in the right-click menu.</p>
-  <p>Right-click in the box below. When you click it, it will trigger a JavaScript alert.</p>
+<<div class="example">
+  <h3>Double Click</h3>
+  <p>Double-clicking triggers a custom JavaScript action.</p>
+  <p>Double-click in the box below. When you do, it will trigger a JavaScript alert.</p>
   <div id='hot-spot' style="border-style: dashed; border-width: 5px; width: 250px; height: 150px;" oncontextmenu="displayMessage()">
   </div>
 </div>
@@ -12,11 +12,11 @@
 <div><h1 class="text-center"></h1>
 
   <div class="mt-4">
-    <h4>Right click button</h4>
-    <button id="rightClickBtn" type="button" class="btn btn-primary">Right Click Me</button>
+    <h4>Double-Click button</h4>
+    <button id="rightClickBtn" type="button" class="btn btn-primary">Double Click Me</button>
   </div>
 
-  <p id="rightClickMessage" style="display: none;">You have done a right click</p>
+  <p id="rightClickMessage" style="display: none;">You have done Double-Click</p>
 </div>
 
 <script>
@@ -28,8 +28,7 @@
         const button = document.getElementById('rightClickBtn');
         const message = document.getElementById('rightClickMessage');
 
-        button.addEventListener('contextmenu', (e) => {
-            e.preventDefault(); // Prevent the default context menu
+        button.addEventListener('dblclick', (e) => {
             message.style.display = 'block'; // Show the message
         });
     });

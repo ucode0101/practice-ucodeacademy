@@ -563,6 +563,10 @@ class Public < Sinatra::Base
     erb :clickable
   end
 
+  get '/double_click' do
+    erb :double_click
+  end
+
   get '/multiple_buttons' do
     erb :multiple_buttons
   end

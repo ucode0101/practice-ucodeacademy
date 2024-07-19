@@ -247,8 +247,8 @@ class Public < Sinatra::Base
   end
 
   post "/authenticate" do
-    username = 'tomsmith'
-    password = 'SuperSecretPassword!'
+    username = 'test'
+    password = 'test123'
 
     if username == params[:username]
       if password == params[:password]

@@ -24,25 +24,26 @@
 <!--</script>-->
 
 
+<div class="example">
+  <h3>Context Menu</h3>
+  <p>Context menu items are custom additions that appear in the right-click menu.</p>
+  <p>Right-click in the box below to see one called 'the-internet'. When you click it, it will trigger a JavaScript alert.</p>
+  <div id='hot-spot' style="border-style: dashed; border-width: 5px; width: 250px; height: 150px;" oncontextmenu="displayMessage()">
+  </div>
+</div>
 
+<br><br>
 
+<div><h1 class="text-center"></h1>
 
-
-<div class="container">
-  <div class="example">
-    <h3>Context Menu</h3>
-    <p>Context menu items are custom additions that appear in the right-click menu.</p>
-    <p>Right-click in the box below to see one called 'the-internet'. When you click it, it will trigger a JavaScript alert.</p>
-    <div id="hot-spot" oncontextmenu="displayMessage()"></div>
+  <div class="mt-4">
+    <button id="rightClickBtn" type="button" class="btn btn-primary">Right Click Me</button>
   </div>
 
-  <h3 class="text-center">Right Click Example</h3>
-  <button id="rightClickBtn" type="button" class="btn btn-primary">Right Click Me</button>
-  <p id="rightClickMessage">You have done a right click</p>
+  <p id="rightClickMessage" style="display: none;">You have done a right click</p>
 </div>
 
 <script>
-    // Display an alert message when right-clicking in the hot-spot div
     function displayMessage() {
         window.alert('You selected a context menu');
     }
@@ -51,10 +52,13 @@
         const button = document.getElementById('rightClickBtn');
         const message = document.getElementById('rightClickMessage');
 
-        // Add event listener for right-click on the button
         button.addEventListener('contextmenu', (e) => {
             e.preventDefault(); // Prevent the default context menu
             message.style.display = 'block'; // Show the message
         });
     });
 </script>
+
+
+
+

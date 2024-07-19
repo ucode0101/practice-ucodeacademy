@@ -24,20 +24,36 @@
 <!--</script>-->
 
 
-<div class="example">
-  <h3>Context Menu</h3>
-  <p>Context menu items are custom additions that appear in the right-click menu.</p>
-  <p>Right-click in the box below to see one called 'the-internet'. When you click it, it will trigger a JavaScript alert.</p>
-  <div id="hot-spot" style="border-style: dashed; border-width: 5px; width: 250px; height: 150px;" oncontextmenu="displayMessage()"></div>
-</div>
-</br></br>
-<div>
-  <h1 class="text-center">Right Click Example</h1>
-  <div class="mt-4 text-center">
-    <button id="rightClickBtn" type="button" class="btn btn-primary">Right Click Me</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Right Click Example</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+      #rightClickMessage {
+          display: none;
+          color: green;
+      }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="example">
+    <h3>Context Menu</h3>
+    <p>Context menu items are custom additions that appear in the right-click menu.</p>
+    <p>Right-click in the box below to see one called 'the-internet'. When you click it, it will trigger a JavaScript alert.</p>
+    <div id="hot-spot" style="border-style: dashed; border-width: 5px; width: 250px; height: 150px;" oncontextmenu="displayMessage()"></div>
   </div>
-  <p id="rightClickMessage">You have done a right click</p>
-</div>
+  </br></br>
+  <div>
+    <h1 class="text-center">Right Click Example</h1>
+    <div class="mt-4 text-center">
+      <button id="rightClickBtn" type="button" class="btn btn-primary">Right Click Me</button>
+    </div>
+    <p id="rightClickMessage">You have done a right click</p>
+  </div>
 </div>
 
 <script>
@@ -57,3 +73,5 @@
         });
     });
 </script>
+</body>
+</html>

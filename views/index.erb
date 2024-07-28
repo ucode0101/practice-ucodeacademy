@@ -23,20 +23,44 @@
     }
     /* Style for the list items */
     ul li {
-        margin-bottom: 5px;
+        /*margin-bottom: 5px; !* Remove this the original *!*/
+        width: 100%;
+        margin-bottom: 10px;
     }
     /* Style for the links in the list */
     ul li a {
+        /*below 2 lines original*/
+        /*text-decoration: none;*/
+        /*color: #007bff; !* Change the color as needed *!*/
+
         text-decoration: none;
-        color: #007bff; /* Change the color as needed */
+        color: #3498DB;
+        font-size: 18px;
+        display: block;
+        padding: 10px;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        transition: background 0.3s, box-shadow 0.3s;
     }
     /* Hover effect for the links */
     ul li a:hover {
-        text-decoration: underline;
+        text-decoration: underline;  /*this is the original*/
+        background: #3498DB;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     #page-footer {
-        padding-bottom: 20px;
-        border-bottom: 2px solid #ddd;
+        /*bellow 2 lines original */
+        /*padding-bottom: 20px;*/
+        /*border-bottom: 2px solid #ddd;*/
+        background-color: #2C3E50;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
     }
 
 

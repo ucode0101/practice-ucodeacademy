@@ -365,9 +365,9 @@ class Public < Sinatra::Base
   end
 
   # Just added this
-  get '/examples' do
-    erb :examples, layout: :layout
-  end
+  # get '/examples' do
+  #   erb :examples, layout: :layout
+  # end
   # just added above this
 
   set :email_username, ENV['SENDGRID_USERNAME'] || ''

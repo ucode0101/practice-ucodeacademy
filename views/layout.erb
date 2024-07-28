@@ -89,6 +89,98 @@
 <!--</html>-->
 
 
+<!--<!DOCTYPE html>-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<!--<html>-->
+<!--<head>-->
+<!--  <script src="/js/vendor/298279967.js"></script>-->
+<!--  <meta charset="utf-8" />-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+<!--  <title>Practice Automation</title>-->
+<!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+<!--  <link href="/css/app.css" rel="stylesheet">-->
+<!--  <link href="/css/font-awesome.css" rel="stylesheet">-->
+<!--  <script src="/js/vendor/jquery-1.11.3.min.js"></script>-->
+<!--  <script src="/js/vendor/jquery-ui-1.11.4/jquery-ui.js"></script>-->
+<!--  <script src="/js/foundation/foundation.js"></script>-->
+<!--  <script src="/js/foundation/foundation.alerts.js"></script>-->
+<!--  <script>-->
+<!--      $(document).foundation();-->
+<!--  </script>-->
+<!--  <style>-->
+<!--      .custom-navbar {-->
+<!--          background-color: #343a40; /* Dark navbar color */-->
+<!--          padding: 10px;-->
+<!--      }-->
+<!--      .navbar-brand {-->
+<!--          color: white;-->
+<!--          font-size: 1.5em;-->
+<!--      }-->
+<!--      .navbar-nav .nav-link {-->
+<!--          color: white;-->
+<!--      }-->
+<!--      .container {-->
+<!--          margin-top: 20px;-->
+<!--      }-->
+<!--      .list-group-item {-->
+<!--          padding: 10px 15px;-->
+<!--      }-->
+<!--      h2 {-->
+<!--          margin-top: 20px;-->
+<!--      }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+
+
+
+
+
+<!--<nav class="navbar navbar-expand-sm custom-navbar">-->
+<!--  <a class="nav-link" href="/">Home</a>-->
+
+<!--  <span class="navbar-brand mx-auto">UI Automation Practice</span>-->
+
+<!--  <div class="navbar-nav ml-auto">-->
+<!--  </div>-->
+<!--</nav>-->
+
+
+<!--<div class="container">-->
+<!--  <div id="flash-messages">-->
+    <%# %w[notice error success].each do |type| %>
+      <%# if flash[type.to_sym] %>
+<!--        <div class="alert alert-<%#= type %> alert-dismissible fade show" role="alert">-->
+          <%#= flash[type.to_sym] %>
+<!--          <button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
+<!--            <span aria-hidden="true">&times;</span>-->
+<!--          </button>-->
+<!--        </div>-->
+      <%# end %>
+    <%# end %>
+<!--  </div>-->
+
+  <%#= yield %>
+<!--</div>-->
+
+<!--<div id='page-footer' class="container mt-5">-->
+<!--  <hr>-->
+<!--  <div class="text-center">Powered by <a target="_blank" href="https://www.ucodeacademy.com/"><span style="color: #007bff;">U-Code Academy</span></a></div>-->
+<!--</div>-->
+
+<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
 <!DOCTYPE html>
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -116,6 +208,8 @@
       .navbar-brand {
           color: white;
           font-size: 1.5em;
+          margin: 0 auto;
+          pointer-events: none; /* Make it non-clickable */
       }
       .navbar-nav .nav-link {
           color: white;
@@ -133,40 +227,19 @@
 </head>
 <body>
 
-<!--<nav class="navbar navbar-expand-sm custom-navbar">-->
-<!--  <a class="nav-link" href="/">Home</a>-->
-
-<!--  <div class="navbar-nav ml-auto">-->
-<!--    <a class="navbar-brand" href="">UI Automation Practice</a>-->
-<!--  </div>-->
-<!--</nav>-->
-
-
 <nav class="navbar navbar-expand-sm custom-navbar">
-  <a class="nav-link" href="/">Home</a>
-
-  <span class="navbar-brand mx-auto">UI Automation Practice</span>
-
-  <div class="navbar-nav ml-auto">
+  <div class="container">
+    <a class="navbar-brand mx-auto">UI Automation Practice</a>
   </div>
 </nav>
 
-
 <div class="container">
-  <div id="flash-messages">
-    <% %w[notice error success].each do |type| %>
-      <% if flash[type.to_sym] %>
-        <div class="alert alert-<%= type %> alert-dismissible fade show" role="alert">
-          <%= flash[type.to_sym] %>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-
-  <%= yield %>
+  <h2>Available Examples</h2>
+  <ul class="list-group">
+    <li class="list-group-item"><a href='/abtest'>A/B Testing</a></li>
+    <li class="list-group-item"><a href='/add_remove_elements/'>Add/Remove Elements</a></li>
+    <li class="list-group-item"><a href='/basic_auth'>Basic Auth</a> (user and pass: admin)</li>
+  </ul>
 </div>
 
 <div id='page-footer' class="container mt-5">
@@ -180,7 +253,6 @@
 
 </body>
 </html>
-
 
 
 

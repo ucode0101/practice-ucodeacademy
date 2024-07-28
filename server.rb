@@ -364,6 +364,12 @@ class Public < Sinatra::Base
     erb :forgot_password
   end
 
+  # Just added this
+  get '/examples' do
+    erb :examples, layout: :layout
+  end
+  # just added above this
+
   set :email_username, ENV['SENDGRID_USERNAME'] || ''
   set :email_password, ENV['SENDGRID_PASSWORD'] || ''
   set :email_address, 'dhaeffner@gmail.com'

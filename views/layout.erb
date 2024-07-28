@@ -1,14 +1,104 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 
 
+<!--<html>-->
+<!--<head>-->
+<!--  <script src="/js/vendor/298279967.js"></script>-->
+<!--  <meta charset="utf-8" />-->
+<!--  <meta name="viewport" content="width=device-width" />-->
+<!--  <title>Practice Automation</title>-->
+<!--  <link href="/css/app.css" rel="stylesheet">-->
+<!--  <link href="/css/font-awesome.css" rel="stylesheet">-->
+<!--  <script src="/js/vendor/jquery-1.11.3.min.js"></script>-->
+<!--  <script src="/js/vendor/jquery-ui-1.11.4/jquery-ui.js"></script>-->
+<!--  <script src="/js/foundation/foundation.js"></script>-->
+<!--  <script src="/js/foundation/foundation.alerts.js"></script>-->
+<!--  <script>-->
+<!--      $(document).foundation();-->
+<!--  </script>-->
+<!--  <style>-->
+<!--      .custom-navbar {-->
+<!--          background-color: #343a61 !important; /* Change to your desired color */-->
+<!--          width: 100%;-->
+<!--      }-->
+
+<!--      .navbar-nav {-->
+<!--          display: flex;-->
+<!--          justify-content: flex-start; /* Align items to the start */-->
+<!--          width: 100%;-->
+<!--          padding-left: 2rem; /* Add space before the Home link */-->
+<!--      }-->
+<!--      .nav-item {-->
+<!--          margin: 0 1rem; /* Add space between nav items */-->
+<!--      }-->
+<!--      .navbar-nav .nav-item .nav-link {-->
+<!--          color: white; /* Change text color */-->
+<!--      }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+
+
+<!--<nav class="navbar navbar-expand-sm custom-navbar">-->
+<!--  <ul class="navbar-nav mr-auto">-->
+<!--    <li class="nav-item">-->
+<!--      <br>-->
+<!--      <a class="nav-link" href="/" style="color: white;"><strong>Home</strong></a>-->
+
+<!--      <a href="" style="color: #343a61;"> Home </a>-->
+
+<!--    </li>-->
+<!--    <br>-->
+<!--  </ul>-->
+<!--</nav>-->
+
+<!--<div class="row">-->
+<!--  <div id="flash-messages" class="large-12 columns">-->
+    <%# %w[notice error success].each do |type| %>
+      <%# if flash[type.to_sym] %>
+<!--        <div data-alert id='flash' class='flash <%#= type %>'>-->
+          <%#= flash[type.to_sym] %>
+<!--          <a href="#" class="close">&times;</a>-->
+<!--        </div>-->
+      <%# end %>
+    <%# end %>
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="row">-->
+<!--  <a href="https://www.ucodeacademy.com">-->
+<!--    <img style="position: absolute; top: 0; right: 0; border: 0; width: 100px; height: auto;" src="/img/ucode.jpg" alt="U-Code Academy">-->
+<!--  </a>-->
+
+
+<!--  <div id="content" class="large-12 columns">-->
+    <%#= yield %>
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div id='page-footer' class="row">-->
+<!--  <div class="large-4 large-centered columns">-->
+<!--    <hr>-->
+<!--    <div style="text-align: center;">Powered by <a target="_blank" href="https://www.ucodeacademy.com/"><span style="color: #007bff;">U-Code Academy</span></a></div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <html>
 <head>
   <script src="/js/vendor/298279967.js"></script>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Practice Automation</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="/css/app.css" rel="stylesheet">
   <link href="/css/font-awesome.css" rel="stylesheet">
   <script src="/js/vendor/jquery-1.11.3.min.js"></script>
@@ -20,70 +110,61 @@
   </script>
   <style>
       .custom-navbar {
-          background-color: #343a61 !important; /* Change to your desired color */
-          width: 100%;
+          background-color: #343a40; /* Dark navbar color */
+          padding: 10px;
       }
-
-      .navbar-nav {
-          display: flex;
-          justify-content: flex-start; /* Align items to the start */
-          width: 100%;
-          padding-left: 2rem; /* Add space before the Home link */
+      .navbar-brand {
+          color: white;
+          font-size: 1.5em;
       }
-      .nav-item {
-          margin: 0 1rem; /* Add space between nav items */
+      .navbar-nav .nav-link {
+          color: white;
       }
-      .navbar-nav .nav-item .nav-link {
-          color: white; /* Change text color */
+      .container {
+          margin-top: 20px;
+      }
+      .list-group-item {
+          padding: 10px 15px;
+      }
+      h2 {
+          margin-top: 20px;
       }
   </style>
 </head>
 <body>
 
-
 <nav class="navbar navbar-expand-sm custom-navbar">
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-      <br>
-      <a class="nav-link" href="/" style="color: white;"><strong>Home</strong></a>
-
-      <a href="" style="color: #343a61;"> Home </a>
-
-    </li>
-    <br>
-  </ul>
+  <a class="navbar-brand" href="#">UI Automation Practice</a>
+  <div class="navbar-nav ml-auto">
+    <a class="nav-link" href="/">Home</a>
+  </div>
 </nav>
 
-<div class="row">
-  <div id="flash-messages" class="large-12 columns">
+<div class="container">
+  <div id="flash-messages">
     <% %w[notice error success].each do |type| %>
       <% if flash[type.to_sym] %>
-        <div data-alert id='flash' class='flash <%= type %>'>
+        <div class="alert alert-<%= type %> alert-dismissible fade show" role="alert">
           <%= flash[type.to_sym] %>
-          <a href="#" class="close">&times;</a>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
       <% end %>
     <% end %>
   </div>
+
+  <%= yield %>
 </div>
 
-<div class="row">
-<!--  <a href="https://www.ucodeacademy.com">-->
-<!--    <img style="position: absolute; top: 0; right: 0; border: 0; width: 100px; height: auto;" src="/img/ucode.jpg" alt="U-Code Academy">-->
-<!--  </a>-->
-
-
-  <div id="content" class="large-12 columns">
-    <%= yield %>
-  </div>
+<div id='page-footer' class="container mt-5">
+  <hr>
+  <div class="text-center">Powered by <a target="_blank" href="https://www.ucodeacademy.com/"><span style="color: #007bff;">U-Code Academy</span></a></div>
 </div>
 
-<div id='page-footer' class="row">
-  <div class="large-4 large-centered columns">
-    <hr>
-    <div style="text-align: center;">Powered by <a target="_blank" href="https://www.ucodeacademy.com/"><span style="color: #007bff;">U-Code Academy</span></a></div>
-  </div>
-</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>

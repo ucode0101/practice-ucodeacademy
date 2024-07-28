@@ -92,98 +92,8 @@
 
 
 
-<!--<!DOCTYPE html>-->
-
-<!--<html>-->
-<!--<head>-->
-<!--  <script src="/js/vendor/298279967.js"></script>-->
-<!--  <meta charset="utf-8" />-->
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
-<!--  <title>Practice Automation</title>-->
-<!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
-<!--  <link href="/css/app.css" rel="stylesheet">-->
-<!--  <link href="/css/font-awesome.css" rel="stylesheet">-->
-<!--  <script src="/js/vendor/jquery-1.11.3.min.js"></script>-->
-<!--  <script src="/js/vendor/jquery-ui-1.11.4/jquery-ui.js"></script>-->
-<!--  <script src="/js/foundation/foundation.js"></script>-->
-<!--  <script src="/js/foundation/foundation.alerts.js"></script>-->
-<!--  <script>-->
-<!--      $(document).foundation();-->
-<!--  </script>-->
-<!--  <style>-->
-<!--      .custom-navbar {-->
-<!--          background-color: #0f1f42; /* Dark navbar color   3a5a8a */-->
-<!--          padding: 10px;-->
-<!--      }-->
-<!--      .navbar-brand {-->
-<!--          color: white;-->
-<!--          font-size: 1.5em;-->
-<!--          margin: 0 auto;-->
-<!--          position: absolute;-->
-<!--          left: 50%;-->
-<!--          transform: translateX(-50%);-->
-<!--      }-->
-<!--      .navbar-nav .nav-link {-->
-<!--          color: white;-->
-<!--      }-->
-<!--      .container {-->
-<!--          margin-top: 20px;-->
-<!--      }-->
-<!--      .list-group-item {-->
-<!--          padding: 10px 15px;-->
-<!--      }-->
-<!--      h2 {-->
-<!--          margin-top: 20px;-->
-<!--      }-->
-<!--  </style>-->
-<!--</head>-->
-<!--<body>-->
-
-<!--<nav class="navbar navbar-expand-sm custom-navbar">-->
-<!--  <div class="navbar-nav">-->
-<!--    <a class="nav-link" href="/">Home</a>-->
-<!--  </div>-->
-<!--  <span class="navbar-brand">UI Automation Practice</span>-->
-<!--  <div class="navbar-nav ml-auto">-->
-<!--  </div>-->
-<!--</nav>-->
-
-<!--<div class="container">-->
-<!--  <div id="flash-messages">-->
-    <%# %w[notice error success].each do |type| %>
-      <%# if flash[type.to_sym] %>
-<!--        <div class="alert alert-<%#= type %> alert-dismissible fade show" role="alert">-->
-          <%#= flash[type.to_sym] %>
-<!--          <button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
-<!--            <span aria-hidden="true">&times;</span>-->
-<!--          </button>-->
-<!--        </div>-->
-      <%# end %>
-    <%# end %>
-<!--  </div>-->
-
-  <%#= yield %>
-<!--</div>-->
-
-<!--<div id='page-footer' class="container mt-5">-->
-<!--  <hr>-->
-<!--  <div class="text-center">Powered by <a target="_blank" href="https://www.ucodeacademy.com/"><span style="color: #007bff;">U-Code Academy</span></a></div>-->
-<!--</div>-->
-
-<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>-->
-<!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>-->
-<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
-
-<!--</body>-->
-<!--</html>-->
-
-
-
-
-
 <!DOCTYPE html>
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
 <html>
 <head>
   <script src="/js/vendor/298279967.js"></script>
@@ -202,60 +112,39 @@
   </script>
   <style>
       .custom-navbar {
-          background-color: #1a1a2e; /* Darker navbar color */
+          background-color: #0f1f42; /* Dark navbar color   3a5a8a */
           padding: 10px;
       }
       .navbar-brand {
           color: white;
           font-size: 1.5em;
-          pointer-events: none; /* Make it non-clickable */
+          margin: 0 auto;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
       }
       .navbar-nav .nav-link {
           color: white;
       }
       .container {
-          margin-top: 30px;
+          margin-top: 20px;
       }
       .list-group-item {
-          padding: 15px 20px;
-          font-size: 1.1em;
-      }
-      .list-group-item a {
-          text-decoration: none;
-          color: #007bff;
-      }
-      .list-group-item a:hover {
-          color: #0056b3;
-          text-decoration: underline;
+          padding: 10px 15px;
       }
       h2 {
           margin-top: 20px;
-          font-size: 2em;
-          font-weight: bold;
-      }
-      #page-footer {
-          margin-top: 50px;
-          padding: 20px 0;
-          background-color: #f8f9fa;
-          border-top: 1px solid #e7e7e7;
-      }
-      #page-footer a {
-          color: #007bff;
-          text-decoration: none;
-      }
-      #page-footer a:hover {
-          color: #0056b3;
       }
   </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-sm custom-navbar">
-  <div class="container">
-    <a class="navbar-brand mx-auto">UI Automation Practice</a>
-    <div class="navbar-nav ml-auto">
-      <a class="nav-link" href="/">Home</a>
-    </div>
+  <div class="navbar-nav">
+    <a class="nav-link" href="/">Home</a>
+  </div>
+  <span class="navbar-brand">UI Automation Practice</span>
+  <div class="navbar-nav ml-auto">
   </div>
 </nav>
 
@@ -276,11 +165,9 @@
   <%= yield %>
 </div>
 
-<div id='page-footer' class="text-center">
-  <div class="container">
-    <hr>
-    <p>Powered by <a target="_blank" href="https://www.ucodeacademy.com/">U-Code Academy</a></p>
-  </div>
+<div id='page-footer' class="container mt-5">
+  <hr>
+  <div class="text-center">Powered by <a target="_blank" href="https://www.ucodeacademy.com/"><span style="color: #007bff;">U-Code Academy</span></a></div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -289,6 +176,11 @@
 
 </body>
 </html>
+
+
+
+
+
 
 
 

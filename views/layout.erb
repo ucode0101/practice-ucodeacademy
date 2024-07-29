@@ -1,92 +1,92 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 
 
-<html>
-<head>
-  <script src="/js/vendor/298279967.js"></script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width" />
-  <title>Practice Automation</title>
-  <link href="/css/app.css" rel="stylesheet">
-  <link href="/css/font-awesome.css" rel="stylesheet">
-  <script src="/js/vendor/jquery-1.11.3.min.js"></script>
-  <script src="/js/vendor/jquery-ui-1.11.4/jquery-ui.js"></script>
-  <script src="/js/foundation/foundation.js"></script>
-  <script src="/js/foundation/foundation.alerts.js"></script>
-  <script>
-      $(document).foundation();
-  </script>
-  <style>
-      .custom-navbar {
-          background-color: #343a61 !important; /* Change to your desired color */
-          width: 100%;
-      }
+<!--<html>-->
+<!--<head>-->
+<!--  <script src="/js/vendor/298279967.js"></script>-->
+<!--  <meta charset="utf-8" />-->
+<!--  <meta name="viewport" content="width=device-width" />-->
+<!--  <title>Practice Automation</title>-->
+<!--  <link href="/css/app.css" rel="stylesheet">-->
+<!--  <link href="/css/font-awesome.css" rel="stylesheet">-->
+<!--  <script src="/js/vendor/jquery-1.11.3.min.js"></script>-->
+<!--  <script src="/js/vendor/jquery-ui-1.11.4/jquery-ui.js"></script>-->
+<!--  <script src="/js/foundation/foundation.js"></script>-->
+<!--  <script src="/js/foundation/foundation.alerts.js"></script>-->
+<!--  <script>-->
+<!--      $(document).foundation();-->
+<!--  </script>-->
+<!--  <style>-->
+<!--      .custom-navbar {-->
+<!--          background-color: #343a61 !important; /* Change to your desired color */-->
+<!--          width: 100%;-->
+<!--      }-->
 
-      .navbar-nav {
-          display: flex;
-          justify-content: flex-start; /* Align items to the start */
-          width: 100%;
-          padding-left: 2rem; /* Add space before the Home link */
-      }
-      .nav-item {
-          margin: 0 1rem; /* Add space between nav items */
-      }
-      .navbar-nav .nav-item .nav-link {
-          color: white; /* Change text color */
-      }
-  </style>
-</head>
-<body>
-
-
-<nav class="navbar navbar-expand-sm custom-navbar">
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-      <br>
-      <a class="nav-link" href="/" style="color: white;"><strong>Home</strong></a>
-
-      <a href="" style="color: #343a61;"> Home </a>
-
-    </li>
-    <br>
-  </ul>
-</nav>
-
-<div class="row">
-  <div id="flash-messages" class="large-12 columns">
-    <% %w[notice error success].each do |type| %>
-      <% if flash[type.to_sym] %>
-        <div data-alert id='flash' class='flash <%= type %>'>
-          <%= flash[type.to_sym] %>
-          <a href="#" class="close">&times;</a>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
-
-<div class="row">
-  <a href="https://www.ucodeacademy.com">
-    <img style="position: absolute; top: 0; right: 0; border: 0; width: 100px; height: auto;" src="/img/ucode.jpg" alt="U-Code Academy">
-  </a>
+<!--      .navbar-nav {-->
+<!--          display: flex;-->
+<!--          justify-content: flex-start; /* Align items to the start */-->
+<!--          width: 100%;-->
+<!--          padding-left: 2rem; /* Add space before the Home link */-->
+<!--      }-->
+<!--      .nav-item {-->
+<!--          margin: 0 1rem; /* Add space between nav items */-->
+<!--      }-->
+<!--      .navbar-nav .nav-item .nav-link {-->
+<!--          color: white; /* Change text color */-->
+<!--      }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
 
 
-  <div id="content" class="large-12 columns">
-    <%= yield %>
-  </div>
-</div>
+<!--<nav class="navbar navbar-expand-sm custom-navbar">-->
+<!--  <ul class="navbar-nav mr-auto">-->
+<!--    <li class="nav-item">-->
+<!--      <br>-->
+<!--      <a class="nav-link" href="/" style="color: white;"><strong>Home</strong></a>-->
 
-<div id='page-footer' class="row">
-  <div class="large-4 large-centered columns">
-    <hr>
-    <div style="text-align: center;">Powered by <a target="_blank" href="https://www.ucodeacademy.com/"><span style="color: #007bff;">U-Code Academy</span></a></div>
-  </div>
-</div>
+<!--      <a href="" style="color: #343a61;"> Home </a>-->
 
-</body>
-</html>
+<!--    </li>-->
+<!--    <br>-->
+<!--  </ul>-->
+<!--</nav>-->
+
+<!--<div class="row">-->
+<!--  <div id="flash-messages" class="large-12 columns">-->
+    <%# %w[notice error success].each do |type| %>
+      <%# if flash[type.to_sym] %>
+<!--        <div data-alert id='flash' class='flash <%#= type %>'>-->
+          <%#= flash[type.to_sym] %>
+<!--          <a href="#" class="close">&times;</a>-->
+<!--        </div>-->
+      <%# end %>
+    <%# end %>
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="row">-->
+<!--  <a href="https://www.ucodeacademy.com">-->
+<!--    <img style="position: absolute; top: 0; right: 0; border: 0; width: 100px; height: auto;" src="/img/ucode.jpg" alt="U-Code Academy">-->
+<!--  </a>-->
+
+
+<!--  <div id="content" class="large-12 columns">-->
+    <%#= yield %>
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div id='page-footer' class="row">-->
+<!--  <div class="large-4 large-centered columns">-->
+<!--    <hr>-->
+<!--    <div style="text-align: center;">Powered by <a target="_blank" href="https://www.ucodeacademy.com/"><span style="color: #007bff;">U-Code Academy</span></a></div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
 
 
 
@@ -226,128 +226,128 @@
 
 
 
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--<head>-->
-<!--  <meta charset="utf-8" />-->
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
-<!--  <title>Practice Automation</title>-->
-<!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
-<!--  <link href="/css/app.css" rel="stylesheet">-->
-<!--  <link href="/css/font-awesome.css" rel="stylesheet">-->
-<!--  <script src="/js/vendor/jquery-1.11.3.min.js"></script>-->
-<!--  <script src="/js/vendor/jquery-ui-1.11.4/jquery-ui.js"></script>-->
-<!--  <script src="/js/foundation/foundation.js"></script>-->
-<!--  <script src="/js/foundation/foundation.alerts.js"></script>-->
-<!--  <script>-->
-<!--      $(document).foundation();-->
-<!--  </script>-->
-<!--  <style>-->
-<!--      body {-->
-<!--          font-family: 'Arial', sans-serif;-->
-<!--          margin: 0;-->
-<!--          padding: 0;-->
-<!--          color: #333;-->
-<!--          background-color: #f8f8f8;-->
-<!--      }-->
-<!--      .custom-navbar {-->
-<!--          background-color: #2C3E50; /* Dark navbar color */-->
-<!--          padding: 10px;-->
-<!--      }-->
-<!--      .navbar-brand {-->
-<!--          color: white;-->
-<!--          font-size: 1.5em;-->
-<!--          margin: 0 auto;-->
-<!--          position: absolute;-->
-<!--          left: 50%;-->
-<!--          transform: translateX(-50%);-->
-<!--      }-->
-<!--      .navbar-nav .nav-link {-->
-<!--          color: white;-->
-<!--      }-->
-<!--      .container {-->
-<!--          margin-top: 20px;-->
-<!--      }-->
-<!--      .list-group-item {-->
-<!--          padding: 15px 20px;-->
-<!--          font-size: 1.1em;-->
-<!--      }-->
-<!--      .list-group-item a {-->
-<!--          text-decoration: none;-->
-<!--          color: #3498DB;-->
-<!--      }-->
-<!--      .list-group-item a:hover {-->
-<!--          color: #0056b3;-->
-<!--          text-decoration: underline;-->
-<!--      }-->
-<!--      h2 {-->
-<!--          font-size: 2em;-->
-<!--          margin-top: 20px;-->
-<!--          font-weight: bold;-->
-<!--      }-->
-<!--      footer {-->
-<!--          background-color: #2C3E50;-->
-<!--          color: white;-->
-<!--          text-align: center;-->
-<!--          padding: 10px 0;-->
-<!--          width: 100%;-->
-<!--          position: relative;-->
-<!--          bottom: 0;-->
-<!--      }-->
-<!--      footer .container {-->
-<!--          max-width: 1200px;-->
-<!--          margin: 0 auto;-->
-<!--          padding: 0 20px;-->
-<!--      }-->
-<!--      footer a {-->
-<!--          color: #007bff;-->
-<!--          text-decoration: none;-->
-<!--      }-->
-<!--      footer a:hover {-->
-<!--          color: #0056b3;-->
-<!--      }-->
-<!--  </style>-->
-<!--</head>-->
-<!--<body>-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice Automation</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="/css/app.css" rel="stylesheet">
+  <link href="/css/font-awesome.css" rel="stylesheet">
+  <script src="/js/vendor/jquery-1.11.3.min.js"></script>
+  <script src="/js/vendor/jquery-ui-1.11.4/jquery-ui.js"></script>
+  <script src="/js/foundation/foundation.js"></script>
+  <script src="/js/foundation/foundation.alerts.js"></script>
+  <script>
+      $(document).foundation();
+  </script>
+  <style>
+      body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          color: #333;
+          background-color: #f8f8f8;
+      }
+      .custom-navbar {
+          background-color: #2C3E50; /* Dark navbar color */
+          padding: 10px;
+      }
+      .navbar-brand {
+          color: white;
+          font-size: 1.5em;
+          margin: 0 auto;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+      }
+      .navbar-nav .nav-link {
+          color: white;
+      }
+      .container {
+          margin-top: 20px;
+      }
+      .list-group-item {
+          padding: 15px 20px;
+          font-size: 1.1em;
+      }
+      .list-group-item a {
+          text-decoration: none;
+          color: #3498DB;
+      }
+      .list-group-item a:hover {
+          color: #0056b3;
+          text-decoration: underline;
+      }
+      h2 {
+          font-size: 2em;
+          margin-top: 20px;
+          font-weight: bold;
+      }
+      footer {
+          background-color: #2C3E50;
+          color: white;
+          text-align: center;
+          padding: 10px 0;
+          width: 100%;
+          position: relative;
+          bottom: 0;
+      }
+      footer .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+      }
+      footer a {
+          color: #007bff;
+          text-decoration: none;
+      }
+      footer a:hover {
+          color: #0056b3;
+      }
+  </style>
+</head>
+<body>
 
-<!--<nav class="navbar navbar-expand-sm custom-navbar">-->
-<!--  <div class="navbar-nav">-->
-<!--    <a class="nav-link" href="/">Home</a>-->
-<!--  </div>-->
-<!--  <span class="navbar-brand">UI Automation Practice</span>-->
-<!--  <div class="navbar-nav ml-auto">-->
-<!--  </div>-->
-<!--</nav>-->
+<nav class="navbar navbar-expand-sm custom-navbar">
+  <div class="navbar-nav">
+    <a class="nav-link" href="/">Home</a>
+  </div>
+  <span class="navbar-brand">UI Automation Practice</span>
+  <div class="navbar-nav ml-auto">
+  </div>
+</nav>
 
-<!--<div class="container">-->
-<!--  <div id="flash-messages">-->
-    <%# %w[notice error success].each do |type| %>
-      <%# if flash[type.to_sym] %>
-<!--        <div class="alert alert-<%#= type %> alert-dismissible fade show" role="alert">-->
-          <%#= flash[type.to_sym] %>
-<!--          <button type="button" class="close" data-dismiss="alert" aria-label="Close">-->
-<!--            <span aria-hidden="true">&times;</span>-->
-<!--          </button>-->
-<!--        </div>-->
-      <%# end %>
-    <%# end %>
-<!--  </div>-->
+<div class="container">
+  <div id="flash-messages">
+    <% %w[notice error success].each do |type| %>
+      <% if flash[type.to_sym] %>
+        <div class="alert alert-<%= type %> alert-dismissible fade show" role="alert">
+          <%= flash[type.to_sym] %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 
-  <%#= yield %>
-<!--</div>-->
+  <%= yield %>
+</div>
 
-<!--<footer>-->
-<!--  <div class="container">-->
-<!--    <p>Powered by <a target="_blank" href="https://www.ucodeacademy.com/">U-Code Academy</a></p>-->
-<!--  </div>-->
-<!--</footer>-->
+<footer>
+  <div class="container">
+    <p>Powered by <a target="_blank" href="https://www.ucodeacademy.com/">U-Code Academy</a></p>
+  </div>
+</footer>
 
-<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>-->
-<!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>-->
-<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<!--</body>-->
-<!--</html>-->
+</body>
+</html>
 
 
 

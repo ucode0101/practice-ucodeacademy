@@ -22,7 +22,6 @@
 source 'https://rubygems.org'
 
 ruby '3.3.4'
-
 gem 'sinatra'
 gem 'sinatra-flash'
 gem 'sinatra-contrib'
@@ -41,3 +40,4 @@ group :test do
   gem 'rspec', '~> 3.5.0'
   gem 'sauce_whisk', '~> 0.1.0'
 end
+

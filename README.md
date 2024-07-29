@@ -1,4 +1,4 @@
-# The Internet 0.58.0 (10, February 2020)
+# The Internet 0.58.0 (8, July 2020)
 =======
 
 An example application that captures prominent and ugly functionality found on the web. Perfect for writing automated acceptance tests against.

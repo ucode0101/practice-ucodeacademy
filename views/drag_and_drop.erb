@@ -30,36 +30,36 @@
 
   <h5 style="font-weight:600; margin-bottom:0.3rem;">Exercise 2 — Drop the Circle</h5>
   <p style="color:#64748b; font-size:0.9rem; margin-bottom:0.5rem;">Drag the small blue circle into the target zone.</p>
-  <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.2.621/styles/kendo.default-ocean-blue.min.css">
   <div class="demo-section">
-    <div id="droptarget" class="k-header" data-role="droptarget">Drop here</div>
-    <div id="draggable" data-role="draggable"></div>
+    <div id="droptarget">Drop here</div>
+    <div id="draggable" draggable="true"></div>
   </div>
 </div>
 
 <script>
-var dragSrcEl=null;
-function handleDragStart(e){this.style.opacity='0.4';dragSrcEl=this;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/html',this.innerHTML);}
-function handleDragOver(e){if(e.preventDefault)e.preventDefault();e.dataTransfer.dropEffect='move';return false;}
-function handleDragEnter(e){this.classList.add('over');}
-function handleDragLeave(e){this.classList.remove('over');}
-function handleDrop(e){if(e.stopPropagation)e.stopPropagation();if(dragSrcEl!=this){dragSrcEl.innerHTML=this.innerHTML;this.innerHTML=e.dataTransfer.getData('text/html');}return false;}
-function handleDragEnd(e){[].forEach.call(cols,function(col){col.classList.remove('over');});this.style.opacity='1';}
-var cols=document.querySelectorAll('#columns .column');
-[].forEach.call(cols,function(col){
-  col.addEventListener('dragstart',handleDragStart,false);
-  col.addEventListener('dragenter',handleDragEnter,false);
-  col.addEventListener('dragover',handleDragOver,false);
-  col.addEventListener('dragleave',handleDragLeave,false);
-  col.addEventListener('drop',handleDrop,false);
-  col.addEventListener('dragend',handleDragEnd,false);
+// Exercise 1 — column swap
+var dragSrcEl = null;
+function handleDragStart(e) { this.style.opacity='0.4'; dragSrcEl=this; e.dataTransfer.effectAllowed='move'; e.dataTransfer.setData('text/html', this.innerHTML); }
+function handleDragOver(e)  { e.preventDefault(); e.dataTransfer.dropEffect='move'; return false; }
+function handleDragEnter(e) { this.classList.add('over'); }
+function handleDragLeave(e) { this.classList.remove('over'); }
+function handleDrop(e)      { e.stopPropagation(); if (dragSrcEl !== this) { dragSrcEl.innerHTML=this.innerHTML; this.innerHTML=e.dataTransfer.getData('text/html'); } return false; }
+function handleDragEnd(e)   { document.querySelectorAll('#columns .column').forEach(function(c){ c.classList.remove('over'); c.style.opacity='1'; }); }
+document.querySelectorAll('#columns .column').forEach(function(col) {
+  col.addEventListener('dragstart', handleDragStart);
+  col.addEventListener('dragenter', handleDragEnter);
+  col.addEventListener('dragover',  handleDragOver);
+  col.addEventListener('dragleave', handleDragLeave);
+  col.addEventListener('drop',      handleDrop);
+  col.addEventListener('dragend',   handleDragEnd);
 });
-</script>
-<script src="https://kendo.cdn.telerik.com/2022.2.621/js/jquery.min.js"></script>
-<script src="https://kendo.cdn.telerik.com/2022.2.621/js/kendo.all.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("#draggable").kendoDraggable({hint:function(){return $("#draggable").clone();},dragstart:function(){$("#draggable").addClass("hollow");$("#droptarget").text("Drop here!");},dragend:function(){var d=$("#draggable").data("kendoDraggable");if(!d.dropped)$("#droptarget").text("Try again!");$("#draggable").removeClass("hollow");}});
-  $("#droptarget").kendoDropTarget({dragenter:function(){$("#droptarget").text("Now drop...").addClass("painted");},dragleave:function(){$("#droptarget").text("Drop here").removeClass("painted");},drop:function(){$("#droptarget").text("You did it! ✓").addClass("painted");$("#draggable").removeClass("hollow");}});
-});
+
+// Exercise 2 — circle drop
+var circle = document.getElementById('draggable');
+var target = document.getElementById('droptarget');
+circle.addEventListener('dragstart', function(e) { e.dataTransfer.setData('text','circle'); this.style.opacity='0.4'; });
+circle.addEventListener('dragend',   function()  { this.style.opacity='1'; });
+target.addEventListener('dragover',  function(e) { e.preventDefault(); this.classList.add('painted'); this.textContent='Drop it!'; });
+target.addEventListener('dragleave', function()  { this.classList.remove('painted'); this.textContent='Drop here'; });
+target.addEventListener('drop',      function(e) { e.preventDefault(); this.textContent='You did it! ✓'; this.classList.add('painted'); circle.style.display='none'; });
 </script>

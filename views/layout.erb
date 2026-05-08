@@ -100,20 +100,27 @@
     .flash-wrapper { max-width: 1200px; margin: 1rem auto 0; padding: 0 1.5rem; }
 
     /* ── PRACTICE PAGES SHARED ── */
-    .practice-page { max-width: 860px; margin: 2rem auto; padding: 0 1.5rem; }
+    .practice-page { max-width: 860px; margin: 1.5rem auto; padding: 0 1.5rem; }
     .practice-banner {
       background: #EFF6FF;
       border-left: 4px solid #2563EB;
       border-radius: 0 8px 8px 0;
-      padding: 1rem 1.2rem;
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.2rem;
+      overflow: hidden;
     }
-    .practice-banner h4 { margin: 0 0 0.3rem; font-size: 0.85rem; font-weight: 700; color: #1D4ED8; text-transform: uppercase; letter-spacing: 0.5px; }
-    .practice-banner p  { margin: 0; font-size: 0.92rem; color: #1E293B; line-height: 1.5; }
-    .practice-banner ul { margin: 0.4rem 0 0 1.2rem; padding: 0; font-size: 0.9rem; color: #334155; }
-    .practice-banner ul li { margin-bottom: 0.2rem; }
-    .practice-title { font-size: 1.5rem; font-weight: 700; color: #0F172A; margin: 0 0 1rem; }
-    .back-link { display: inline-flex; align-items: center; gap: 0.4rem; color: #2563EB; font-size: 0.85rem; text-decoration: none; margin-bottom: 1.2rem; }
+    .practice-banner-toggle {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.5rem 1rem; cursor: pointer; user-select: none;
+      background: none; border: none; width: 100%; text-align: left;
+    }
+    .practice-banner-toggle span { font-size: 0.78rem; font-weight: 700; color: #1D4ED8; text-transform: uppercase; letter-spacing: 0.5px; }
+    .practice-banner-toggle .toggle-icon { font-size: 0.75rem; color: #2563EB; transition: transform 0.2s; }
+    .practice-banner-toggle.collapsed .toggle-icon { transform: rotate(-90deg); }
+    .practice-banner-body { padding: 0 1rem 0.6rem; }
+    .practice-banner-body ul { margin: 0 0 0 1.1rem; padding: 0; font-size: 0.82rem; color: #334155; }
+    .practice-banner-body ul li { margin-bottom: 0.15rem; line-height: 1.4; }
+    .practice-title { font-size: 1.4rem; font-weight: 700; color: #0F172A; margin: 0 0 0.8rem; }
+    .back-link { display: inline-flex; align-items: center; gap: 0.4rem; color: #2563EB; font-size: 0.82rem; text-decoration: none; margin-bottom: 0.8rem; }
     .back-link:hover { text-decoration: underline; }
 
     /* ── FOOTER ── */
@@ -169,6 +176,18 @@
   </p>
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.practice-banner-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var body = this.nextElementSibling;
+      var collapsed = body.style.display === 'none';
+      body.style.display = collapsed ? '' : 'none';
+      this.classList.toggle('collapsed', !collapsed);
+    });
+  });
+});
+</script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

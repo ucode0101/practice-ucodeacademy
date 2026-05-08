@@ -6,14 +6,14 @@ my-card { display:block; }
   <a href="/" class="back-link">← Back to exercises</a>
   <h1 class="practice-title">Shadow DOM</h1>
   <div class="practice-banner">
-    <h4>What to practice</h4>
-    <ul>
-      <li>Access elements inside a Shadow DOM using JavaScript: <code>element.shadowRoot.querySelector()</code></li>
+  <button class="practice-banner-toggle"><span>💡 What to practice</span><span class="toggle-icon">▼</span></button>
+  <div class="practice-banner-body">
+    <ul><li>Access elements inside a Shadow DOM using JavaScript: <code>element.shadowRoot.querySelector()</code></li>
       <li>In Selenium 4+: use <code>getShadowRoot()</code> on the host element</li>
       <li>Read text, click buttons, and fill inputs that live inside the shadow root</li>
-      <li>Understand that standard <code>findElement(By.css(...))</code> won't pierce the shadow boundary</li>
-    </ul>
+      <li>Understand that standard <code>findElement(By.css(...))</code> won't pierce the shadow boundary</li></ul>
   </div>
+</div>
 
   <div class="example">
     <p style="color:#64748b; font-size:0.9rem; margin-bottom:1rem;">The card below is rendered inside a Shadow DOM. Try to access its content with your automation script.</p>

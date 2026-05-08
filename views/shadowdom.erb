@@ -1,43 +1,56 @@
-<h1>Simple template</h1>
+<style>
+my-card { display:block; }
+</style>
+
+<div class="practice-page">
+  <a href="/" class="back-link">← Back to exercises</a>
+  <h1 class="practice-title">Shadow DOM</h1>
+  <div class="practice-banner">
+    <h4>What to practice</h4>
+    <ul>
+      <li>Access elements inside a Shadow DOM using JavaScript: <code>element.shadowRoot.querySelector()</code></li>
+      <li>In Selenium 4+: use <code>getShadowRoot()</code> on the host element</li>
+      <li>Read text, click buttons, and fill inputs that live inside the shadow root</li>
+      <li>Understand that standard <code>findElement(By.css(...))</code> won't pierce the shadow boundary</li>
+    </ul>
+  </div>
+
+  <div class="example">
+    <p style="color:#64748b; font-size:0.9rem; margin-bottom:1rem;">The card below is rendered inside a Shadow DOM. Try to access its content with your automation script.</p>
+
+    <my-card id="shadow-host"></my-card>
+
+    <template id="card-template">
+      <style>
+        .shadow-card { background:#1e293b; color:#f1f5f9; border-radius:10px; padding:1.5rem; max-width:360px; font-family:Inter,sans-serif; }
+        .shadow-card h3 { margin:0 0 0.5rem; color:#60a5fa; font-size:1rem; }
+        .shadow-card p  { margin:0 0 1rem; font-size:0.9rem; color:#94a3b8; }
+        .shadow-card input { width:100%; padding:0.5rem; border-radius:6px; border:1px solid #475569; background:#0f172a; color:#f1f5f9; margin-bottom:0.8rem; box-sizing:border-box; }
+        .shadow-card button { background:#2563eb; color:#fff; border:none; padding:0.5rem 1.2rem; border-radius:6px; cursor:pointer; font-weight:600; }
+        .shadow-card button:hover { background:#1d4ed8; }
+        #shadow-result { margin-top:0.8rem; color:#4ade80; font-size:0.9rem; min-height:1.2rem; }
+      </style>
+      <div class="shadow-card">
+        <h3>Shadow DOM Component</h3>
+        <p>This input and button live inside a shadow root. Standard CSS selectors won't reach them.</p>
+        <input type="text" id="shadow-input" placeholder="Type something here..." />
+        <button id="shadow-btn">Submit</button>
+        <div id="shadow-result"></div>
+      </div>
+    </template>
+  </div>
+</div>
 
 <script>
-    customElements.define('my-paragraph',
-        class extends HTMLElement {
-            constructor() {
-                super();
-
-                const template = document.getElementById('my-paragraph');
-                const templateContent = template.content;
-
-                this.attachShadow({mode: 'open'}).appendChild(
-                    templateContent.cloneNode(true)
-                );
-            }
-        }
-    );
-
-    const slottedSpan = document.querySelector('my-paragraph span');
-
+customElements.define('my-card', class extends HTMLElement {
+  constructor() {
+    super();
+    const tpl = document.getElementById('card-template');
+    this.attachShadow({mode:'open'}).appendChild(tpl.content.cloneNode(true));
+    this.shadowRoot.getElementById('shadow-btn').addEventListener('click', () => {
+      const val = this.shadowRoot.getElementById('shadow-input').value;
+      this.shadowRoot.getElementById('shadow-result').textContent = val ? 'You typed: ' + val : 'Please enter some text first.';
+    });
+  }
+});
 </script>
-
-<template id="my-paragraph">
-  <style>
-    p {
-      color: white;
-      background-color: #666;
-      padding: 5px;
-    }
-  </style>
-  <p><slot name="my-text">My default text</slot></p>
-</template>
-
-<my-paragraph>
-  <span slot="my-text">Let's have some different text!</span>
-</my-paragraph>
-
-<my-paragraph>
-  <ul slot="my-text">
-    <li>Let's have some different text!</li>
-    <li>In a list!</li>
-  </ul>
-</my-paragraph>

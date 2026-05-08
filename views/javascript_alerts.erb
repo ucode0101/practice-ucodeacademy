@@ -1,33 +1,28 @@
-<script>
-  function jsAlert() {
-    alert('I am a JS Alert');
-    log('You successfully clicked an alert');
-  }
-
-  function jsConfirm() {
-    var c = confirm('I am a JS Confirm');
-    var result = c === true ? 'Ok' : 'Cancel';
-    log('You clicked: ' + result);
-  }
-
-  function jsPrompt() {
-    var p = prompt('I am a JS prompt');
-    log('You entered: ' + p);
-  }
-
-  function log(msg) {
-    var result = document.getElementById('result');
-    result.innerHTML = msg;
-  }
-</script>
-<div class='example'>
-  <h3>JavaScript Alerts</h3>
-  <p>Here are some examples of different JavaScript alerts which can be troublesome for automation</p>
-  <ul style='list-style-type: none;'>
-    <li><button onclick="jsAlert()">Click for JS Alert</button></li>
-    <li><button onclick="jsConfirm()">Click for JS Confirm</button></li>
-    <li><button onclick="jsPrompt()">Click for JS Prompt</button></li>
-  </ul>
-  <h4>Result:</h4>
-  <p id='result' style='color:green'></p>
+<div class="practice-page">
+  <a href="/" class="back-link">← Back to exercises</a>
+  <h1 class="practice-title">JavaScript Alerts</h1>
+  <div class="practice-banner">
+    <h4>What to practice</h4>
+    <ul>
+      <li><strong>JS Alert</strong> — accept the alert using <code>driver.switchTo().alert().accept()</code></li>
+      <li><strong>JS Confirm</strong> — accept or dismiss, then verify the result text changes</li>
+      <li><strong>JS Prompt</strong> — send text input to the prompt using <code>sendKeys()</code></li>
+    </ul>
+  </div>
+  <div class="example">
+    <ul style='list-style-type:none; padding:0;'>
+      <li style="margin-bottom:10px"><button class="btn btn-primary" onclick="jsAlert()">Click for JS Alert</button></li>
+      <li style="margin-bottom:10px"><button class="btn btn-primary" onclick="jsConfirm()">Click for JS Confirm</button></li>
+      <li style="margin-bottom:10px"><button class="btn btn-primary" onclick="jsPrompt()">Click for JS Prompt</button></li>
+    </ul>
+    <div style="margin-top:1rem; padding:0.8rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px;">
+      <strong>Result:</strong> <span id='result' style='color:#16a34a'>—</span>
+    </div>
+  </div>
 </div>
+<script>
+function jsAlert(){alert('I am a JS Alert');log('You successfully clicked an alert');}
+function jsConfirm(){var c=confirm('I am a JS Confirm');log('You clicked: '+(c===true?'Ok':'Cancel'));}
+function jsPrompt(){var p=prompt('I am a JS prompt');log('You entered: '+p);}
+function log(msg){document.getElementById('result').innerHTML=msg;}
+</script>

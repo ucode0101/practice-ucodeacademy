@@ -1,18 +1,27 @@
-<div class="example">
-  <h3>Checkboxes</h3>
-  <form id='checkboxes'>
-    <input type="checkbox"> checkbox 1</br>
-    <input type="checkbox" checked> checkbox 2</br>
-    <input type="checkbox" disabled style="opacity: 0.3"> checkbox 3
-
-  </form>
+<div class="practice-page">
+  <a href="/" class="back-link">← Back to exercises</a>
+  <h1 class="practice-title">Checkboxes</h1>
+  <div class="practice-banner">
+    <h4>What to practice</h4>
+    <ul>
+      <li>Select and deselect checkboxes using <code>click()</code></li>
+      <li>Verify a checkbox is checked with <code>isSelected()</code></li>
+      <li>Handle a disabled checkbox — checkbox 3 cannot be clicked</li>
+      <li>Assert the checked state changes after interaction</li>
+    </ul>
+  </div>
+  <div class="example">
+    <form id='checkboxes'>
+      <div class="mb-2"><label><input type="checkbox" id="cb1"> Checkbox 1</label></div>
+      <div class="mb-2"><label><input type="checkbox" id="cb2" checked> Checkbox 2 (checked by default)</label></div>
+      <div class="mb-2"><label><input type="checkbox" id="cb3" disabled style="opacity:0.4"> Checkbox 3 (disabled)</label></div>
+    </form>
+  </div>
 </div>
 <script>
 var form = document.getElementById('checkboxes');
 var checkboxes = form.getElementsByTagName('input');
-for (var i=0, len=checkboxes.length; i<len; i++) {
-    checkboxes[i].onclick = function() {
-      this.checked ? this.setAttribute("checked", "") : this.removeAttribute("checked");
-    }
+for (var i=0,len=checkboxes.length;i<len;i++){
+  checkboxes[i].onclick=function(){this.checked?this.setAttribute("checked",""):this.removeAttribute("checked");}
 }
 </script>

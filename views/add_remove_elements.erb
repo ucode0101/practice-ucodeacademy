@@ -1,31 +1,28 @@
-
-<h3>Add/Remove Elements</h3>
-</br>
-<div class="example">
-  <button onclick="addElement()">Add Element</button>
-  <hr />
-  <div id="elements">
-    <% if number_of_elements %>
-      <% number_of_elements.times do |index| %>
-        <button onclick='deleteElement()'>Delete</button>
+<div class="practice-page">
+  <a href="/" class="back-link">← Back to exercises</a>
+  <h1 class="practice-title">Add / Remove Elements</h1>
+  <div class="practice-banner">
+    <h4>What to practice</h4>
+    <ul>
+      <li>Click "Add Element" and verify a new Delete button appears in the DOM</li>
+      <li>Count the number of Delete buttons using <code>findElements()</code></li>
+      <li>Click a Delete button and verify it is removed from the DOM</li>
+      <li>Add multiple elements and remove them one by one</li>
+    </ul>
+  </div>
+  <div class="example">
+    <button class="btn btn-primary" onclick="addElement()">Add Element</button>
+    <hr/>
+    <div id="elements">
+      <% if number_of_elements %>
+        <% number_of_elements.times do |index| %>
+          <button class="btn btn-danger added-manually" onclick='deleteElement()' style="margin:4px;">Delete</button>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
-
 <script>
-  function addElement() {
-    $("<button class='added-manually' onclick='deleteElement()'>Delete</button>").appendTo('#elements');
-  }
-  function deleteElement() {
-    $('#elements button:first-child').remove();
-  }
+function addElement(){$('<button class="btn btn-danger added-manually" onclick="deleteElement()" style="margin:4px;">Delete</button>').appendTo('#elements');}
+function deleteElement(){$('#elements button:first-child').remove();}
 </script>
-<style>
-button.added-manually {
-  margin-right: 0.285em;
-}
-button {
-  margin-bottom: 10px;
-}
-</style>

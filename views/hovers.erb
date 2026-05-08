@@ -1,28 +1,37 @@
 <style>
-.figure {
-  float: left;
-  padding-right: 20px;
-}
-
-.figcaption {
-  display: none;
-}
-
-.figure:hover .figcaption {
-  display: block;
-}
+.hover-grid { display:flex; gap:1.5rem; flex-wrap:wrap; margin-top:1rem; }
+.figure { text-align:center; position:relative; }
+.figure img { width:120px; height:120px; border-radius:50%; border:3px solid #e2e8f0; display:block; }
+.figcaption { display:none; margin-top:0.5rem; }
+.figure:hover img { border-color:#2563EB; }
+.figure:hover .figcaption { display:block; }
+.figcaption h5 { margin:0.3rem 0; font-size:0.9rem; color:#1e293b; }
+.figcaption a { font-size:0.85rem; color:#2563EB; }
 </style>
-
-<div class="example">
-  <h3>Hovers</h3>
-  <p>Hover over the image for additional information</p>
-  <% 3.times do |count| %>
-  <div class="figure">
-    <img src="/img/avatar-blank.jpg" alt="User Avatar">
-    <div class="figcaption">
-      <h5>name: user<%= count+1 %></h5>
-      <a href="/users/<%= count+1 %>">View profile</a>
+<div class="practice-page">
+  <a href="/" class="back-link">← Back to exercises</a>
+  <h1 class="practice-title">Hovers</h1>
+  <div class="practice-banner">
+    <h4>What to practice</h4>
+    <ul>
+      <li>Use <code>Actions.moveToElement()</code> to hover over each user avatar</li>
+      <li>Verify the hidden caption (name + View profile link) appears on hover</li>
+      <li>Assert the username text matches the expected value (user1, user2, user3)</li>
+      <li>Click the "View profile" link that appears on hover</li>
+    </ul>
+  </div>
+  <div class="example">
+    <p style="color:#64748b; font-size:0.9rem;">Hover over each avatar to reveal hidden information.</p>
+    <div class="hover-grid">
+      <% 3.times do |count| %>
+      <div class="figure">
+        <img src="/img/avatar-blank.jpg" alt="User Avatar">
+        <div class="figcaption">
+          <h5>name: user<%= count+1 %></h5>
+          <a href="/users/<%= count+1 %>">View profile</a>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
-  <% end %>
 </div>

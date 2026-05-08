@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Page with JavaScript errors on load</title>
-    <script>
-      function loadError() {
-        var xx = document.propertyThatDoesNotExist.xyz;
-      }
-    </script>
-  <head>
-  <body onload="loadError()">
-    <p>
-      This page has a JavaScript error in the onload event.
-      This is often a problem to using normal Javascript injection
-      techniques.
-    </p>
-  </body>
+<head>
+  <title>JavaScript Error on Load</title>
+  <script>
+    function loadError() {
+      var xx = document.propertyThatDoesNotExist.xyz;
+    }
+  </script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family:'Inter',sans-serif; background:#f8fafc; padding:2rem; }
+    .practice-banner { background:#FEF3C7; border-left:4px solid #D97706; border-radius:0 8px 8px 0; padding:1rem 1.2rem; margin-bottom:1.5rem; }
+    .practice-banner h4 { margin:0 0 0.3rem; font-size:0.85rem; font-weight:700; color:#92400E; text-transform:uppercase; }
+    .practice-banner ul { margin:0.4rem 0 0 1.2rem; padding:0; font-size:0.9rem; color:#78350F; }
+  </style>
+</head>
+<body onload="loadError()">
+  <a href="/" style="color:#2563EB; font-size:0.85rem; text-decoration:none;">← Back to exercises</a>
+  <h1 style="font-size:1.5rem; font-weight:700; margin:1rem 0;">JavaScript Error on Load</h1>
+
+  <div class="practice-banner">
+    <h4>⚠️ This page is intentionally broken</h4>
+    <ul>
+      <li>This page throws a JavaScript error when it loads — that is the point of this exercise</li>
+      <li>Practice detecting JS errors using browser logs: <code>driver.manage().logs().get(LogType.BROWSER)</code></li>
+      <li>Assert that a JS error message appears in the browser console log</li>
+      <li>This simulates real-world scenarios where a page breaks on load</li>
+    </ul>
+  </div>
+
+  <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:1.2rem;">
+    <p>This page fires a JavaScript error in the <code>onload</code> event. Open your browser's DevTools console to see it.</p>
+    <p style="color:#64748b; font-size:0.9rem;">The error: <code>Cannot read properties of undefined (reading 'xyz')</code></p>
+  </div>
+</body>
 </html>

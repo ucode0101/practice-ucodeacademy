@@ -15,15 +15,13 @@
   .hero-meta {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
     font-size: 0.9rem;
-    color: #CBD5E1;
-    margin-top: 0.4rem;
+    color: #64748b;
   }
-  .hero-meta .divider { color: #475569; }
-  .hero-meta .stat { color: #60A5FA; font-weight: 600; }
+  .hero-meta .divider { color: #cbd5e1; }
+  .hero-meta .stat { color: #2563eb; font-weight: 600; }
 
   /* ── PAGE WRAPPER ── */
   .page-wrapper { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 3rem; }
@@ -68,17 +66,17 @@
 <!-- HERO -->
 <section class="hero">
   <h1>UI Automation Practice Platform</h1>
-  <div class="hero-meta">
+</section>
+
+<!-- MAIN LIST -->
+<div class="page-wrapper">
+  <div class="hero-meta" style="margin: 1rem 0 0.8rem;">
     <span>Real-world automation scenarios to sharpen your Selenium, Playwright, and Cypress skills.</span>
     <span class="divider">·</span>
     <span><span class="stat">50+</span> Exercises</span>
     <span class="divider">·</span>
     <span><span class="stat">Free</span> Always</span>
   </div>
-</section>
-
-<!-- MAIN LIST -->
-<div class="page-wrapper">
   <div class="exercise-list" id="exercise-list">
     <a href="/abtest"                class="exercise-item" data-name="a/b testing abtest"><span class="item-name">A/B Testing</span><span class="badge-diff badge-intermediate">Intermediate</span></a>
     <a href="/add_remove_elements/"  class="exercise-item" data-name="add remove elements"><span class="item-name">Add/Remove Elements</span><span class="badge-diff badge-beginner">Beginner</span></a>

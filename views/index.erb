@@ -10,29 +10,28 @@
     gap: 1rem;
   }
   .hero-left {
-    font-size: 0.82rem;
+    font-size: 0.75rem;
     color: #94a3b8;
-    max-width: 260px;
-    line-height: 1.4;
-    flex-shrink: 0;
+    white-space: nowrap;
+    flex-shrink: 1;
+    min-width: 0;
   }
   .hero h1 {
-    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-size: clamp(1rem, 2vw, 1.45rem);
     font-weight: 700;
     color: #ffffff;
-    text-align: center;
-    flex: 1;
-    margin: 0;
+    white-space: nowrap;
+    margin: 0 1.2rem;
+    flex-shrink: 0;
   }
   .hero-right {
-    font-size: 0.82rem;
+    font-size: 0.75rem;
     color: #94a3b8;
-    text-align: right;
+    white-space: nowrap;
     flex-shrink: 0;
-    line-height: 1.6;
   }
   .hero-right .stat { color: #60a5fa; font-weight: 700; }
-  .hero-right .divider { color: #475569; margin: 0 0.3rem; }
+  .hero-right .divider { color: #475569; margin: 0 0.4rem; }
 
   /* ── PAGE WRAPPER ── */
   .page-wrapper { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 3rem; }

@@ -2,33 +2,26 @@
   /* ── HERO ── */
   .hero {
     background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 60%, #2563EB 100%);
-    padding: 1.1rem 2.5rem;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  .hero-left {
-    font-size: 0.72rem;
-    color: #94a3b8;
-    white-space: nowrap;
-  }
-  .hero h1 {
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: #ffffff;
-    white-space: nowrap;
-    margin: 0;
+    padding: 1.6rem 2.5rem 1.4rem;
     text-align: center;
   }
-  .hero-right {
-    font-size: 0.72rem;
-    color: #94a3b8;
-    text-align: right;
-    white-space: nowrap;
+  .hero h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.4rem;
   }
-  .hero-right .stat { color: #60a5fa; font-weight: 700; }
-  .hero-right .divider { color: #475569; margin: 0 0.5rem; }
+  .hero-desc {
+    font-size: 1rem;
+    color: #cbd5e1;
+    margin: 0 0 0.5rem;
+  }
+  .hero-stats {
+    font-size: 0.8rem;
+    color: #94a3b8;
+  }
+  .hero-stats .stat { color: #60a5fa; font-weight: 700; }
+  .hero-stats .divider { color: #475569; margin: 0 0.5rem; }
 
   /* ── PAGE WRAPPER ── */
   .page-wrapper { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 3rem; }
@@ -72,9 +65,9 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">Real-world automation scenarios to sharpen your Selenium, Playwright, and Cypress skills.</div>
   <h1>UI Automation Practice Platform</h1>
-  <div class="hero-right">
+  <div class="hero-desc">Real-world automation scenarios to sharpen your Selenium, Playwright, and Cypress skills.</div>
+  <div class="hero-stats">
     <span class="stat">50+</span> Exercises
     <span class="divider">·</span>
     <span class="stat">Free</span> Always

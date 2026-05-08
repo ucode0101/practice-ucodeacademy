@@ -1,63 +1,27 @@
+<div class="practice-page">
+  <a href="/" class="back-link">← Back to exercises</a>
+  <h1 class="practice-title">Login Page</h1>
+  <div class="practice-banner"><ul>
+    <li>Login with valid credentials (<strong>test</strong> / <strong>test123</strong>) and verify the success message</li>
+    <li>Submit invalid credentials and assert the error message appears</li>
+    <li>Leave fields empty and verify validation prevents login</li>
+    <li>After login, verify you are redirected to the secure area</li>
+  </ul></div>
 
-
-<!--<div class="example">-->
-<!--  <h2>Login Page</h2>-->
-<!--  <h4 class="subheader">-->
-<!--    This is where you can log into the secure area.-->
-<!--    <br>If the information is wrong you should see error messages.-->
-<!--    <br>-->
-<!--    Username: <strong>test</strong>-->
-<!--    <br>-->
-<!--    Password: <strong>test123</strong>-->
-<!--  </h4>-->
-
-<!--  <br>-->
-<!--  <form name="login" id="login" action="/authenticate" method="post">-->
-<!--    <div class="row">-->
-<!--      <div class="large-6 small-12 columns">-->
-<!--        <label for="username">Username</label>-->
-<!--        <input type="text" name="username" id="username" />-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="row">-->
-<!--      <div class="large-6 small-12 columns">-->
-<!--        <label for="password">Password</label>-->
-<!--        <input type="password" name="password" id="password" />-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <button class="radius" type="submit"><i class="fa fa-2x fa-sign-in"> Login</i></button>-->
-<!--  </form>-->
-<!--</div>-->
-
-
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="example">
-        <h2>Login Page</h2>
-        <h4 class="subheader">
-          This is where you can log into the secure area.
-          <br>If the information is wrong you should see error messages.
-          <br>
-          Username: <strong>test</strong>
-          <br>
-          Password: <strong>test123</strong>
-        </h4>
-        <br>
-        <form name="login" id="login" action="/authenticate" method="post">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" name="username" id="username" />
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" name="password" id="password" />
-          </div>
-          <button class="btn btn-primary btn-block radius" type="submit">
-            <i class="fa fa-sign-in" aria-hidden="true"></i> Login
-          </button>
-        </form>
+  <div style="max-width:420px;">
+    <p style="color:#64748b; font-size:0.85rem; margin-bottom:0.2rem;">Username: <strong>test</strong> &nbsp;·&nbsp; Password: <strong>test123</strong></p>
+    <form name="login" id="login" action="/authenticate" method="post" style="margin-top:1rem;">
+      <div class="form-group" style="margin-bottom:0.8rem;">
+        <label for="username" style="font-weight:600; display:block; margin-bottom:0.3rem;">Username</label>
+        <input type="text" class="form-control" name="username" id="username" style="width:100%; padding:0.5rem; border:1px solid #cbd5e1; border-radius:6px;" />
       </div>
-    </div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label for="password" style="font-weight:600; display:block; margin-bottom:0.3rem;">Password</label>
+        <input type="password" class="form-control" name="password" id="password" style="width:100%; padding:0.5rem; border:1px solid #cbd5e1; border-radius:6px;" />
+      </div>
+      <button class="btn btn-primary" type="submit" style="width:100%; padding:0.6rem;">
+        <i class="fa fa-sign-in" aria-hidden="true"></i> Login
+      </button>
+    </form>
   </div>
 </div>

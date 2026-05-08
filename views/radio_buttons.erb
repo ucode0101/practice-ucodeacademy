@@ -1,93 +1,41 @@
-
 <style>
-
-    .form-check-input {
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 5px;
-    }
-
-    .form-check-label {
-        display: inline-block;
-        vertical-align: middle;
-        margin-bottom: 0;
-    }
-
+.radio-group { margin-bottom: 1.2rem; }
+.radio-group h6 { font-weight: 600; margin-bottom: 0.5rem; color: #1e293b; }
+.radio { margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.4rem; }
+.radio input { margin: 0; }
 </style>
 
+<div class="practice-page">
+  <a href="/" class="back-link">← Back to exercises</a>
+  <h1 class="practice-title">Radio Buttons</h1>
+  <div class="practice-banner"><ul>
+    <li>Select a radio button using <code>click()</code> and verify with <code>isSelected()</code></li>
+    <li>Assert only one radio per group can be selected at a time</li>
+    <li>Handle disabled radio buttons — verify they cannot be clicked</li>
+    <li>Use <code>findElements()</code> to count all radios in a group</li>
+  </ul></div>
 
-<div class="row">
-  <div id="content" class="large-12 columns">
-    <div class="container">
-      <h3 class="h3">Radio buttons</h3>
-      <br>
-      <h6>Select your favorite color:</h6>
-      <br>
-      <div class="radio">
-        <input type="radio" id="blue" name="color" checked="">
-        <label class="form-check-label" for="blue">Blue</label>
-      </div>
-      <div class="radio">
-        <input type="radio" id="red" name="color">
-        <label class="form-check-label" for="red">Red</label>
-      </div>
-      <div class="radio">
-        <input type="radio" id="yellow" name="color">
-        <label class="form-check-label" for="yellow">Yellow</label>
-      </div>
-      <div class="radio">
-        <input type="radio" id="black" name="color">
-        <label class="form-check-label" for="black">Black</label>
-      </div>
-      <div class="radio">
-        <input type="radio" id="green" name="color" disabled="">
-        <label class="form-check-label" style="opacity: 0.3">Green</label>
-      </div>
-      <br>
-      <h6>Select your favorite sport:</h6>
-      <br>
-      <div class="radio">
-        <input type="radio" id="basketball" name="sport">
-        <label class="form-check-label" for="basketball">Basketball</label>
-      </div>
-      <div class="radio">
-        <input type="radio" id="football" name="sport">
-        <label class="form-check-label" for="football">Football</label>
-      </div>
-      <div class="radio">
-        <input type="radio" id="hockey" name="sport">
-        <label class="form-check-label" for="hockey">Hockey</label>
-      </div>
-      <div class="radio">
-        <input type="radio" id="soccer" name="sport">
-        <label class="form-check-label" for="soccer">Soccer</label>
-      </div>
-    </div>
+  <div class="radio-group">
+    <h6>Select your favorite color:</h6>
+    <div class="radio"><input type="radio" id="blue" name="color" checked><label for="blue">Blue</label></div>
+    <div class="radio"><input type="radio" id="red" name="color"><label for="red">Red</label></div>
+    <div class="radio"><input type="radio" id="yellow" name="color"><label for="yellow">Yellow</label></div>
+    <div class="radio"><input type="radio" id="black" name="color"><label for="black">Black</label></div>
+    <div class="radio"><input type="radio" id="green" name="color" disabled><label for="green" style="opacity:0.4">Green</label></div>
+  </div>
 
-    <br>
+  <div class="radio-group">
+    <h6>Select your favorite sport:</h6>
+    <div class="radio"><input type="radio" id="basketball" name="sport"><label for="basketball">Basketball</label></div>
+    <div class="radio"><input type="radio" id="football" name="sport"><label for="football">Football</label></div>
+    <div class="radio"><input type="radio" id="hockey" name="sport"><label for="hockey">Hockey</label></div>
+    <div class="radio"><input type="radio" id="soccer" name="sport"><label for="soccer">Soccer</label></div>
+  </div>
+
+  <div class="radio-group">
     <h6>Do you like the site?</h6>
-    <br>
-
-    <div>
-      <div class="radio"></div>
-
-        <input type="radio" id="yesRadio" name="like">
-        <label class="form-check-label" for="yesRadio">Yes</label>
-      </div>
-      <div class="radio">
-        <input type="radio" id="impressiveRadio" name="like">
-        <label class="form-check-label" for="impressiveRadio">Impressive</label>
-      </div>
-      <div class="radio">
-        <input type="radio" id="noRadio" disabled="" name="like">
-        <label class="form-check-label" style="opacity: 0.3">No</label>
-      </div>
-    </div>
-
-    <script>
-        document.title = "Radio buttons";
-    </script>
-
-
+    <div class="radio"><input type="radio" id="yesRadio" name="like"><label for="yesRadio">Yes</label></div>
+    <div class="radio"><input type="radio" id="impressiveRadio" name="like"><label for="impressiveRadio">Impressive</label></div>
+    <div class="radio"><input type="radio" id="noRadio" name="like" disabled><label for="noRadio" style="opacity:0.4">No</label></div>
   </div>
 </div>

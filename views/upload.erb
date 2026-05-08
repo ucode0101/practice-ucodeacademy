@@ -1,39 +1,37 @@
 <script src='/js/vendor/dropzone.js'></script>
 <style>
-#drag-drop-upload {
-  border-style: dashed;
-  border-width: 5px;
-  border-color: red;
-  height: 400px;
-  width: 400px;
-}
+#drag-drop-upload { border: 2px dashed #94a3b8; border-radius:8px; height:200px; width:100%; max-width:420px; display:flex; align-items:center; justify-content:center; color:#94a3b8; font-size:0.9rem; margin-top:1rem; }
 </style>
-<script>
-$('.dz-success-mark').remove();
-</script>
-<div class="example">
-<h3>File Uploader</h3>
-<p>Choose a file on your system and then click upload. Or, drag and drop a file into the area below.</p>
-  <form method='POST' enctype='multipart/form-data'>
-    <input id='file-upload' type='file' name='file'>
-    </br>
-    <input class="button" id='file-submit' type='submit' value='Upload'>
-  </form>
-</div>
 
-<div class='dz-success-mark' id='drag-drop-upload'>
-</div>
-<div id="preview-template" style="display: none;">
-  <div class="dz-preview dz-file-preview">
-    <div class="dz-details">
-      <div class="dz-filename"><span data-dz-name></span></div>
+<div class="practice-page">
+  <a href="/" class="back-link">← Back to exercises</a>
+  <h1 class="practice-title">File Upload</h1>
+  <div class="practice-banner"><ul>
+    <li>Use <code>sendKeys("/absolute/path/to/file")</code> on the file input to set a file</li>
+    <li>Verify the filename appears after selection using <code>getAttribute("value")</code></li>
+    <li>Click Upload and verify the success confirmation appears</li>
+    <li>Test the drag-and-drop zone using Playwright's <code>page.setInputFiles()</code></li>
+  </ul></div>
+
+  <form method='POST' enctype='multipart/form-data' style="margin-bottom:1rem;">
+    <div class="form-group" style="margin-bottom:0.8rem;">
+      <label style="font-weight:600; display:block; margin-bottom:0.3rem;">Choose a file</label>
+      <input id='file-upload' type='file' name='file'>
     </div>
-    <div class="dz-success-mark"><span>✔</span></div>
+    <button class="btn btn-primary" id='file-submit' type='submit'>Upload</button>
+  </form>
+
+  <p style="color:#64748b; font-size:0.85rem; margin-bottom:0.3rem;">Or drag and drop a file below:</p>
+  <div class='dz-success-mark' id='drag-drop-upload'>Drop file here</div>
+
+  <div id="preview-template" style="display:none;">
+    <div class="dz-preview dz-file-preview">
+      <div class="dz-details"><div class="dz-filename"><span data-dz-name></span></div></div>
+      <div class="dz-success-mark"><span>✔</span></div>
+    </div>
   </div>
 </div>
+
 <script>
-  $('div#drag-drop-upload').dropzone({
-    url: '/upload',
-    previewTemplate: $('#preview-template').html()
-  });
+  $('div#drag-drop-upload').dropzone({ url: '/upload', previewTemplate: $('#preview-template').html() });
 </script>

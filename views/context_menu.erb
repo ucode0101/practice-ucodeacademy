@@ -1,6 +1,13 @@
-
+<div class="practice-page">
+  <a href="/" class="back-link">← Back to exercises</a>
+  <h1 class="practice-title">Context Menu</h1>
+  <div class="practice-banner"><ul>
+    <li>Right-click the dashed box using <code>Actions.contextClick(element).perform()</code></li>
+    <li>Handle the resulting JS alert with <code>driver.switchTo().alert().accept()</code></li>
+    <li>Right-click the button and verify the alert message text</li>
+  </ul></div>
 <div class="example">
-  <h3>Context Menu</h3>
+  
   <p>Context menu items are custom additions that appear in the right-click menu.</p>
   <p>Right-click in the box below. When you click it, it will trigger a JavaScript alert.</p>
   <div id='hot-spot' style="border-style: dashed; border-width: 5px; width: 250px; height: 150px;" oncontextmenu="displayMessage()">
@@ -34,7 +41,4 @@
         });
     });
 </script>
-
-
-
-
+</div>

@@ -1,64 +1,37 @@
 <style>
-.example img {
-  width: 82px;
-  height: 82px;
-}
+.content-row { display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.2rem; }
+.content-row img { width:80px; height:80px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+.content-row p { margin:0; font-size:0.9rem; color:#334155; line-height:1.6; }
 </style>
 
-<div class='example'>
-  <h3>Dynamic Content</h3>
-  <p>This example demonstrates the ever-evolving nature of content by loading new text and images on each page refresh.</p>
-  <p>To make some of the content static append <code>?with_content=static</code> or <a href='/dynamic_content?with_content=static'>click here</a>.</p>
+<div class="practice-page">
+  <a href="/" class="back-link">← Back to exercises</a>
+  <h1 class="practice-title">Dynamic Content</h1>
+  <div class="practice-banner"><ul>
+    <li>Reload the page and verify the images and text change each time</li>
+    <li>Append <code>?with_content=static</code> to pin content for consistent testing</li>
+    <li>Assert a specific image or text value is present using <code>getText()</code></li>
+  </ul></div>
 
-  <hr>
-  </br>
-  </br>
+  <p style="font-size:0.85rem; color:#64748b; margin-bottom:1rem;">
+    To make content static: append <code>?with_content=static</code> or <a href='/dynamic_content?with_content=static'>click here</a>.
+  </p>
+  <hr style="margin-bottom:1rem;">
 
-  <% if @static_content %>
-  <div class='row'>
-    <div id='content' class='large-10 columns large-centered'>
-        <div class='row'>
-          <div class='large-2 columns'>
-            <img src='/img/avatars/<%= @images[0] %>'>
-          </div>
-          <div class='large-10 columns'>
-          Accusantium eius ut architecto neque vel voluptatem vel nam eos minus ullam dolores voluptates enim sed voluptatem rerum qui sapiente nesciunt aspernatur et accusamus laboriosam culpa tenetur hic aut placeat error autem qui sunt.
-          </div>
-        </div></br></br>
-        <div class='row'>
-          <div class='large-2 columns'>
-            <img src='/img/avatars/<%= @images[1] %>'>
-          </div>
-          <div class='large-10 columns'>
-          Omnis fugiat porro vero quas tempora quis eveniet ab officia cupiditate culpa repellat debitis itaque possimus odit dolorum et iste quibusdam quis dicta autem sint vel quo vel consequuntur dolorem nihil neque sunt aperiam blanditiis.
-          </div>
-        </div></br></br>
-        <div class='row'>
-          <div class='large-2 columns'>
-            <% 2.times { @images.delete_at(0) } %>
-            <img src='/img/avatars/<%= @images[rand(@images.length-1)] %>'>
-          </div>
-          <div class='large-10 columns'>
-            <%= @copy[0] %>
-          </div>
-        </div></br></br>
-    </div>
-  </div>
-  <% else %>
-  <div class='row'>
-    <div id='content' class='large-10 columns large-centered'>
-      <% @copy.each do |copy| %>
-        <div class='row'>
-          <div class='large-2 columns'>
-            <img src='/img/avatars/<%= @images[rand(@images.length-1)] %>'>
-          </div>
-          <div class='large-10 columns'>
-            <%= copy %>
-          </div>
-        </div></br></br>
-      <% end %>
-    </div>
+<% if @static_content %>
+  <% [0,1,2].each do |i| %>
+  <div class="content-row">
+    <img src='/img/avatars/<%= @images[i] || @images[0] %>'>
+    <p><%= i < 2 ? @copy[0] : @copy[0] %></p>
   </div>
   <% end %>
+<% else %>
+  <% @copy.each_with_index do |copy, i| %>
+  <div class="content-row">
+    <img src='/img/avatars/<%= @images[rand(@images.length)] %>'>
+    <p><%= copy %></p>
+  </div>
+  <% end %>
+<% end %>
 
 </div>

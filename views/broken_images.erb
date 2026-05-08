@@ -1,13 +1,20 @@
 <style>
-  img {
-    width: 120px;
-    height: 90px;
-  }
+  .img-grid { display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem; }
+  .img-grid img { width:120px; height:90px; border:1px solid #e2e8f0; border-radius:6px; object-fit:cover; background:#f1f5f9; }
 </style>
 
-<div class="example">
-  <h3>Broken Images</h3>
-  <img src="asdf.jpg" />
-  <img src="hjkl.jpg" />
-  <img src="img/avatar-blank.jpg" />
+<div class="practice-page">
+  <a href="/" class="back-link">← Back to exercises</a>
+  <h1 class="practice-title">Broken Images</h1>
+  <div class="practice-banner"><ul>
+    <li>Find all <code>&lt;img&gt;</code> tags using <code>findElements(By.tagName("img"))</code></li>
+    <li>Check each image's <code>naturalWidth</code> via JS executor — 0 means broken</li>
+    <li>Assert exactly how many images are broken vs. valid on this page</li>
+  </ul></div>
+
+  <div class="img-grid">
+    <img src="asdf.jpg" alt="broken image 1" />
+    <img src="hjkl.jpg" alt="broken image 2" />
+    <img src="/img/avatar-blank.jpg" alt="valid image" />
+  </div>
 </div>

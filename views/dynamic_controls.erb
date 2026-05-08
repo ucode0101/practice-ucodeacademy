@@ -1,99 +1,44 @@
+<div class="practice-page">
+  <a href="/" class="back-link">← Back to exercises</a>
+  <h1 class="practice-title">Dynamic Controls</h1>
+  <div class="practice-banner"><ul>
+    <li>Click <em>Remove</em> and wait for the checkbox to disappear — use <code>WebDriverWait</code> for the loading indicator</li>
+    <li>Click <em>Add</em> and verify the checkbox reappears in the DOM</li>
+    <li>Click <em>Enable</em>/<em>Disable</em> and assert the input field's <code>disabled</code> attribute changes</li>
+    <li>Use <code>ExpectedConditions.elementToBeClickable()</code> before interacting after async changes</li>
+  </ul></div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>
-  function swapInput() {
-    disableButton("#input-example button");
-    clearMessage();
-    showDelay("#input-example button");
-    pauseThenToggleControls("input");
-  }
-
-  function swapCheckbox (){
-    disableButton("#checkbox-example button");
-    clearMessage();
-    showDelay("#checkbox-example button");
-    pauseThenToggleControls("checkbox");
-  };
-
-  function disableButton(locator) {
-    $(locator).attr("disabled", true);
-  };
-
-  function clearMessage() {
-    if ($("#message").length) {
-       $("#message").first().remove();
-    }
-  };
-
-  function showDelay(locator) {
-    $(locator).after("<div id='loading'>Wait for it... <img src='/img/ajax-loader.gif'></div></br>");
-  };
-
-  function pauseThenToggleControls(target) {
-    setTimeout(function() {
-      if (target === "checkbox") {
-        toggleCheckboxControls();
-      } else if (target === "input") {
-        toggleInputControls();
-      }
-    }, 3000 );
-  };
-
+  function swapInput() { disableButton("#input-example button"); clearMessage(); showDelay("#input-example button"); pauseThenToggleControls("input"); }
+  function swapCheckbox(){ disableButton("#checkbox-example button"); clearMessage(); showDelay("#checkbox-example button"); pauseThenToggleControls("checkbox"); }
+  function disableButton(locator) { $(locator).attr("disabled", true); }
+  function clearMessage() { if ($("#message").length) { $("#message").first().remove(); } }
+  function showDelay(locator) { $(locator).after("<div id='loading'>Wait for it... <img src='/img/ajax-loader.gif'></div>"); }
+  function pauseThenToggleControls(target) { setTimeout(function() { target === "checkbox" ? toggleCheckboxControls() : toggleInputControls(); }, 3000); }
   function toggleCheckboxControls() {
-    var btn = $("#checkbox-example button").first();
-    var check = $("#checkbox").first();
-    var load = $("#loading");
-    if ( btn.text() == "Remove") {
-      check.remove();
-      btn.text("Add");
-      btn.after("<p id='message'>It's gone!</p>");
-      btn.attr("disabled", false);
-      load.hide();
-    } else {
-      btn.text("Remove");
-      btn.after("<div><input type='checkbox' id='checkbox'> A checkbox</div>");
-      btn.after("<p id='message'>It's back!</p>");
-      btn.attr("disabled", false);
-      load.hide();
-    }
-  };
-
+    var btn = $("#checkbox-example button").first(), check = $("#checkbox").first(), load = $("#loading");
+    if (btn.text() == "Remove") { check.remove(); btn.text("Add"); btn.after("<p id='message'>It's gone!</p>"); }
+    else { btn.text("Remove"); btn.after("<div><input type='checkbox' id='checkbox'> A checkbox</div>"); btn.after("<p id='message'>It's back!</p>"); }
+    btn.attr("disabled", false); load.hide();
+  }
   function toggleInputControls() {
-    var btn = $("#input-example button").first();
-    var input = $("#input-example input").first();
-    var load = $("#loading");
-    if ( btn.text() == "Enable") {
-      input.prop("disabled", false)
-      btn.after("<p id='message'>It's enabled!</p>");
-      btn.text("Disable");
-      btn.attr("disabled", false);
-      load.hide();
-    } else {
-      btn.text("Enable");
-      input.prop("disabled", true)
-      btn.after("<p id='message'>It's disabled!</p>");
-      btn.attr("disabled", false);
-      load.hide();
-    }
-  };
+    var btn = $("#input-example button").first(), input = $("#input-example input").first(), load = $("#loading");
+    if (btn.text() == "Enable") { input.prop("disabled", false); btn.after("<p id='message'>It's enabled!</p>"); btn.text("Disable"); }
+    else { btn.text("Enable"); input.prop("disabled", true); btn.after("<p id='message'>It's disabled!</p>"); }
+    btn.attr("disabled", false); load.hide();
+  }
 </script>
-<div class="example">
-  <h4>Dynamic Controls</h4>
-  <p>This example demonstrates when elements (e.g., checkbox, input field, etc.) are changed asynchronously.</p>
 
-  <h4 class=subheader>Remove/add</h4>
-  </br>
+  <h4>Remove/add</h4>
   <form id="checkbox-example">
-    <div id="checkbox"><input type="checkbox" label="blah"> A checkbox</div>
+    <div id="checkbox"><input type="checkbox"> A checkbox</div><br>
     <button autocomplete="off" type="button" onclick="swapCheckbox()">Remove</button>
   </form>
-
-  <hr>
-
-  </br>
-  <h4 class=subheader>Enable/disable</h4>
-  </br>
+  <hr style="margin:1.5rem 0;">
+  <h4>Enable/disable</h4>
   <form id="input-example">
-    <input type="text" disabled style="width: 30%;">
+    <input type="text" disabled style="width:40%; margin-right:0.5rem;">
     <button autocomplete="off" type="button" onclick="swapInput()">Enable</button>
   </form>
-<div>
+</div>

@@ -3,25 +3,36 @@
   .hero {
     background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 60%, #2563EB 100%);
     color: #fff;
-    padding: 1rem 1.5rem 0.8rem;
-    text-align: center;
-  }
-  .hero h1 {
-    font-size: clamp(1.3rem, 3vw, 1.9rem);
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #ffffff;
-  }
-  .hero-meta {
+    padding: 0.75rem 2rem;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    font-size: 0.9rem;
-    color: #64748b;
+    justify-content: space-between;
+    gap: 1rem;
   }
-  .hero-meta .divider { color: #cbd5e1; }
-  .hero-meta .stat { color: #2563eb; font-weight: 600; }
+  .hero-left {
+    font-size: 0.82rem;
+    color: #94a3b8;
+    max-width: 260px;
+    line-height: 1.4;
+    flex-shrink: 0;
+  }
+  .hero h1 {
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    flex: 1;
+    margin: 0;
+  }
+  .hero-right {
+    font-size: 0.82rem;
+    color: #94a3b8;
+    text-align: right;
+    flex-shrink: 0;
+    line-height: 1.6;
+  }
+  .hero-right .stat { color: #60a5fa; font-weight: 700; }
+  .hero-right .divider { color: #475569; margin: 0 0.3rem; }
 
   /* ── PAGE WRAPPER ── */
   .page-wrapper { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 3rem; }
@@ -65,18 +76,17 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-left">Real-world automation scenarios to sharpen your Selenium, Playwright, and Cypress skills.</div>
   <h1>UI Automation Practice Platform</h1>
+  <div class="hero-right">
+    <span class="stat">50+</span> Exercises
+    <span class="divider">·</span>
+    <span class="stat">Free</span> Always
+  </div>
 </section>
 
 <!-- MAIN LIST -->
 <div class="page-wrapper">
-  <div class="hero-meta" style="margin: 1rem 0 0.8rem;">
-    <span>Real-world automation scenarios to sharpen your Selenium, Playwright, and Cypress skills.</span>
-    <span class="divider">·</span>
-    <span><span class="stat">50+</span> Exercises</span>
-    <span class="divider">·</span>
-    <span><span class="stat">Free</span> Always</span>
-  </div>
   <div class="exercise-list" id="exercise-list">
     <a href="/abtest"                class="exercise-item" data-name="a/b testing abtest"><span class="item-name">A/B Testing</span><span class="badge-diff badge-intermediate">Intermediate</span></a>
     <a href="/add_remove_elements/"  class="exercise-item" data-name="add remove elements"><span class="item-name">Add/Remove Elements</span><span class="badge-diff badge-beginner">Beginner</span></a>

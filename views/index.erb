@@ -123,53 +123,38 @@
   .cards-grid {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    overflow: hidden;
   }
   .exercise-card {
     background: #fff;
-    border: 1.5px solid #E2E8F0;
-    border-radius: 10px;
-    padding: 0.75rem 1.2rem;
+    border-bottom: 1px solid #E2E8F0;
+    padding: 0.7rem 1.1rem;
     text-decoration: none;
     color: inherit;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 1rem;
-    transition: all 0.2s ease;
+    gap: 0.7rem;
+    transition: background 0.15s;
   }
+  .exercise-card:last-child { border-bottom: none; }
   .exercise-card:hover {
-    border-color: #2563EB;
-    background: #F0F5FF;
-    box-shadow: 0 2px 10px rgba(37,99,235,0.08);
+    background: #EFF6FF;
     text-decoration: none;
     color: inherit;
   }
-  .exercise-card .card-icon {
-    font-size: 1.3rem;
-    flex-shrink: 0;
-    width: 2rem;
-    text-align: center;
-  }
-  .exercise-card .card-body {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-  }
+  .exercise-card .card-icon { display: none; }
+  .exercise-card .card-body { display: contents; }
   .exercise-card .card-name {
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: #1E293B;
-    min-width: 160px;
-  }
-  .exercise-card .card-desc {
-    font-size: 0.82rem;
-    color: #64748B;
-    line-height: 1.4;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2563EB;
     flex: 1;
   }
+  .exercise-card:hover .card-name { text-decoration: underline; }
+  .exercise-card .card-desc { display: none; }
   .exercise-card .card-badges {
     display: flex;
     gap: 0.4rem;

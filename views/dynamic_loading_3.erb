@@ -1,67 +1,39 @@
-<div id="content" class="large-12 columns">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-      document.title = "Dynamic Loading | Example #3";
-      $(document).ready(function() {
-          $('#loading').show(); // Show the loading element initially
-          $('#start').hide();
-          setTimeout(function() {
-              $('#loading').hide(); // Hide the loading element after 5 seconds
-              $('#finish').show(); // Show the finish element after hiding the loading element
-          }, 5000);
-      });
-  </script>
+<script>
+  $(document).ready(function() {
+    $('#loading').show();
+    setTimeout(function() {
+      $('#loading').hide();
+      $('#finish').show();
+    }, 5000);
+  });
+</script>
 
-  <div class="example">
-    <h3>Dynamically Loaded Page Elements</h3>
-    <h4>Example 3: Element on page that is hidden and becomes visible after 5 seconds</h4>
+<div class="practice-page">
+  <a href="/dynamic_loading" class="back-link">← Back to Dynamic Loading</a>
+  <h1 class="practice-title">Dynamic Loading — Example 3</h1>
+  <div class="practice-banner"><ul>
+    <li>The page auto-loads after 5 seconds — no button needed</li>
+    <li>Wait for the spinner to disappear, then assert the login form is visible</li>
+    <li>Use credentials: <strong>tomsmith</strong> / <strong>SuperSecretPassword!</strong></li>
+  </ul></div>
 
-    <br>
+  <h4>Example 3: Element hidden, becomes visible after 5 seconds</h4>
 
-    <div id="loading">Loading... <img src="/img/ajax-loader.gif"></div>
-    <div id="start" style="display: none;">
-      <button class="btn btn-primary">Start</button>
-    </div>
+  <div id="loading" style="margin-top:1rem;">Loading... <img src="/img/ajax-loader.gif"></div>
 
-    <div id="finish" style="display: none;">
-      <h4>Hello World!</h4>
-      <h6>Enter <em>tomsmith</em> for the username and <em>SuperSecretPassword!</em> for the password.</h6>
-      <br>
-
-
-
-      <form name="login" id="login" action="/secure_dynamic_loading" method="post" class="form-horizontal">
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="username">Username:</label>
-          <div class="col-sm-6">
-            <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="pwd">Password:</label>
-          <div class="col-sm-6">
-            <input type="password" class="form-control" id="pwd" name="password" placeholder="Password">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-3 col-sm-6">
-            <div class="checkbox">
-              <label><input type="checkbox"> Remember me</label>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-3 col-sm-6">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </div>
-      </form>
-
-
-
-    </div>
-
+  <div id="finish" style="display:none; margin-top:1rem; max-width:420px;">
+    <h4>Hello World!</h4>
+    <p style="color:#64748b; font-size:0.85rem; margin-bottom:1rem;">Enter <em>tomsmith</em> / <em>SuperSecretPassword!</em></p>
+    <form name="login" id="login" action="/secure_dynamic_loading" method="post">
+      <div style="margin-bottom:0.8rem;">
+        <label for="username" style="font-weight:600; display:block; margin-bottom:0.3rem;">Username</label>
+        <input type="text" class="form-control" id="username" name="username" style="width:100%; padding:0.5rem; border:1px solid #cbd5e1; border-radius:6px;" />
+      </div>
+      <div style="margin-bottom:1rem;">
+        <label for="pwd" style="font-weight:600; display:block; margin-bottom:0.3rem;">Password</label>
+        <input type="password" class="form-control" id="pwd" name="password" style="width:100%; padding:0.5rem; border:1px solid #cbd5e1; border-radius:6px;" />
+      </div>
+      <button type="submit" class="btn btn-primary" style="padding:0.6rem 1.5rem;">Submit</button>
+    </form>
   </div>
-
 </div>
-

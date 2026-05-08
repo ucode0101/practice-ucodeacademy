@@ -1,32 +1,32 @@
+<script>
+  $(function(){
+    $('#start button').click(function(){
+      $('#start').hide();
+      $('#start').before("<div id='loading'>Loading... <img src='/img/ajax-loader.gif'></div>");
+      setTimeout(function() {
+        $('#loading').hide();
+        $('#finish').show();
+      }, 5000);
+    });
+  });
+</script>
 
+<div class="practice-page">
+  <a href="/dynamic_loading" class="back-link">← Back to Dynamic Loading</a>
+  <h1 class="practice-title">Dynamic Loading — Example 4</h1>
+  <div class="practice-banner"><ul>
+    <li>Click <strong>Start</strong> to trigger the loading spinner</li>
+    <li>The page shows a spinner for 5 seconds, then reveals <strong>Hello World!</strong></li>
+    <li>Use <code>WebDriverWait</code> to wait for the element to be visible before asserting</li>
+  </ul></div>
 
-<div id="content" class="large-12 columns">
-  <script>
-      $(function(){
-          $('#start button').click(function(){
-              $('#start').hide();
-              $('#start').before("<div id='loading'>Loading... <img src='/img/ajax-loader.gif'></div>");
-              setTimeout(function() {
-                  $('#loading').hide();
-                  $('#finish').show();
-              }, 5000);
-          });
-      });
-  </script>
-  <div class="example">
-    <h3>Dynamically Loaded Page Elements</h3>
-    <h4>Example 4: Element on the page that is rendered after 5 seconds</h4>
+  <h4>Example 4: Element rendered after 5 seconds</h4>
 
-    <br>
+  <div id="start" style="margin-top:1rem;">
+    <button class="btn btn-primary">Start</button>
+  </div>
 
-    <div id="loading" style="display: block;">Loading... <img src="/img/ajax-loader.gif"></div>
-    <div id="start" style="display: none;">
-      <button class="btn btn-primary">Start</button>
-    </div>
-    <div id="finish" style="display: none;">
-      <h4>Hello World!</h4>
-    </div>
-
-    <br>
+  <div id="finish" style="display:none; margin-top:1rem;">
+    <h4>Hello World!</h4>
   </div>
 </div>

@@ -1,69 +1,31 @@
-<div class="container">
-  <div class="row">
-    <div id="flash-messages" class="large-12 columns">
-    </div>
-  </div>
-  <div class="row">
-    <div id="content" class="large-12 columns">
-      <script>
-          document.title = "Dynamic Loading | Example #7";
+<script>
+  window.onload = function() {
+    document.title = "Loading...";
+    setTimeout(function() {
+      document.getElementById('spinner').style.display = 'none';
+      document.getElementById('result').style.display = 'block';
+      document.title = "Dynamic title";
+    }, 5000);
+  };
+</script>
 
-          function sleep(milliseconds) {
-              let start = new Date().getTime();
-              for (let i = 0; i < 1e7; i++) {
-                  if ((new Date().getTime() - start) > milliseconds) {
-                      break;
-                  }
-              }
-          }
+<div class="practice-page">
+  <a href="/dynamic_loading" class="back-link">← Back to Dynamic Loading</a>
+  <h1 class="practice-title">Dynamic Loading — Example 7</h1>
+  <div class="practice-banner"><ul>
+    <li>The page title starts as "Loading..." and changes to "Dynamic title" after 5 seconds</li>
+    <li>Assert <code>driver.getTitle()</code> equals "Loading..." immediately after load</li>
+    <li>Use <code>WebDriverWait</code> to wait until the title changes, then assert the new value</li>
+  </ul></div>
 
-          function changeTitle() {
-              let titles = ["Loading", "Loading.", "Loading..", "Loading..."]
-              for (let outer_index = 0; outer_index < 2; outer_index++) {
-                  for (let index = 0; index < titles.length; index++) {
-                      document.title = titles[index];
-                      sleep(500);
-                  }
-              }
+  <h4>Example 7: Dynamic page title after 5 seconds</h4>
 
-          }
-
-          function deleteById(id) {
-              let element = document.getElementById(id);
-              element.remove();
-          }
-
-          function showImage() {
-              let element = document.getElementById("example");
-              element.insertAdjacentHTML("afterend", '<img src="/img/a-few-moments.jpg" class="rounded mx-auto d-block" alt="square pants">')
-          }
-
-          function addSuccess() {
-              let element = document.getElementById("example");
-              element.insertAdjacentHTML("afterend", '<div class="alert alert-success alert-dismissible fade show" role="alert" id="alert"><strong>Done!</strong></div>')
-          }
-
-          window.onload = function () {
-              document.title = "Loading...";
-          }
-
-          setTimeout(function () {
-              deleteById("alert");
-              showImage();
-              addSuccess();
-              document.title = "Dynamic title";
-          }, 5000);
-
-
-      </script>
-      <div class="example" id="example">
-        <h3>Dynamically Loaded Page Title</h3>
-        <h4>Example 7: Loading page title after 5 seconds</h4>
-        <br>
-
-      </div><div class="alert alert-success alert-dismissible fade show" role="alert" id="alert"><strong>Done!</strong></div><img src="/img/a-few-moments.jpg" class="rounded mx-auto d-block" alt="square pants">
-
-    </div>
+  <div id="spinner" style="margin-top:1rem; color:#64748b;">
+    Loading... <img src="/img/ajax-loader.gif">
   </div>
 
+  <div id="result" style="display:none; margin-top:1rem;">
+    <img src="/img/a-few-moments.jpg" style="max-width:100%; border-radius:8px;" alt="a few moments later">
+    <p style="margin-top:0.8rem; color:#16a34a; font-weight:600;">Done! Page title is now "Dynamic title".</p>
+  </div>
 </div>

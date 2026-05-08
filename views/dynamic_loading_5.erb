@@ -1,62 +1,39 @@
-<div class="container">
-  <div class="row">
-    <div id="flash-messages" class="large-12 columns">
-    </div>
-  </div>
-  <div class="row">
-    <div id="content" class="large-12 columns">
-      <script>
-          document.title = "Dynamic Loading | Example #5";
-          $(setTimeout(function () {
-              $(document).execCommand($.LoadingOverlay("show", {
-                  image: "",
-                  fontawesome: "fa fa-cog fa-spin"
-              }), 5000);
-          }, 0));
-          $(setTimeout(function () {
-              $(document).ready($.LoadingOverlay("hide", {
-                  image: "",
-                  fontawesome: "fa fa-cog fa-spin"
-              }), 5000);
-          }, 5000));
-      </script>
+<style>
+#loading-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.85); display:flex; align-items:center; justify-content:center; z-index:9999; font-size:1.2rem; color:#2563eb; font-weight:600; }
+</style>
+<script>
+  document.title = "Loading...";
+  setTimeout(function() {
+    document.getElementById('loading-overlay').style.display = 'none';
+    document.title = "Dynamic Loading | Example 5";
+  }, 5000);
+</script>
 
-      <div class="example">
-        <h3>Dynamically Loaded Page Elements</h3>
-        <h4>Example 5: Loading overlay that disappears after time</h4>
-        <br>
-        <h6>Enter <em>tomsmith</em> for the username and <em>SuperSecretPassword</em> for the password.</h6>
-        <br>
-        <form name="login" id="login" action="/authenticate_dynamic_loading_5" method="post">
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="username">Username:</label>
-            <div class="col-sm-6">
-              <input type="username" class="form-control" id="username" name="username" placeholder="Enter username">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Password:</label>
-            <div class="col-sm-6">
-              <input type="password" class="form-control" id="pwd" name="password" placeholder="Enter password">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <div class="checkbox">
-                <label><input type="checkbox"> Remember me</label>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </div>
-        </form>
-        <br>
+<div id="loading-overlay"><i class="fa fa-cog fa-spin" style="margin-right:0.5rem;"></i> Loading...</div>
+
+<div class="practice-page">
+  <a href="/dynamic_loading" class="back-link">← Back to Dynamic Loading</a>
+  <h1 class="practice-title">Dynamic Loading — Example 5</h1>
+  <div class="practice-banner"><ul>
+    <li>A full-page overlay blocks interaction for 5 seconds on load</li>
+    <li>Wait for the overlay to disappear before interacting with the form</li>
+    <li>Use credentials: <strong>tomsmith</strong> / <strong>SuperSecretPassword</strong></li>
+  </ul></div>
+
+  <h4>Example 5: Loading overlay that disappears after 5 seconds</h4>
+
+  <div style="margin-top:1rem; max-width:420px;">
+    <p style="color:#64748b; font-size:0.85rem; margin-bottom:1rem;">Enter <em>tomsmith</em> / <em>SuperSecretPassword</em></p>
+    <form name="login" id="login" action="/authenticate_dynamic_loading_5" method="post">
+      <div style="margin-bottom:0.8rem;">
+        <label for="username" style="font-weight:600; display:block; margin-bottom:0.3rem;">Username</label>
+        <input type="text" class="form-control" id="username" name="username" style="width:100%; padding:0.5rem; border:1px solid #cbd5e1; border-radius:6px;" />
       </div>
-
-    </div>
+      <div style="margin-bottom:1rem;">
+        <label for="pwd" style="font-weight:600; display:block; margin-bottom:0.3rem;">Password</label>
+        <input type="password" class="form-control" id="pwd" name="password" style="width:100%; padding:0.5rem; border:1px solid #cbd5e1; border-radius:6px;" />
+      </div>
+      <button type="submit" class="btn btn-primary" style="padding:0.6rem 1.5rem;">Submit</button>
+    </form>
   </div>
-
 </div>

@@ -119,52 +119,61 @@
     background: #E2E8F0;
   }
 
-  /* ── EXERCISE CARDS ── */
+  /* ── EXERCISE LIST ── */
   .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
   }
   .exercise-card {
     background: #fff;
     border: 1.5px solid #E2E8F0;
-    border-radius: 12px;
-    padding: 1.1rem 1.2rem;
+    border-radius: 10px;
+    padding: 0.75rem 1.2rem;
     text-decoration: none;
     color: inherit;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
     transition: all 0.2s ease;
-    position: relative;
-    overflow: hidden;
   }
   .exercise-card:hover {
     border-color: #2563EB;
-    box-shadow: 0 4px 16px rgba(37,99,235,0.12);
-    transform: translateY(-2px);
+    background: #F0F5FF;
+    box-shadow: 0 2px 10px rgba(37,99,235,0.08);
     text-decoration: none;
     color: inherit;
   }
   .exercise-card .card-icon {
-    font-size: 1.4rem;
-    margin-bottom: 0.2rem;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    width: 2rem;
+    text-align: center;
+  }
+  .exercise-card .card-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
   }
   .exercise-card .card-name {
     font-weight: 600;
-    font-size: 0.97rem;
+    font-size: 0.95rem;
     color: #1E293B;
+    min-width: 160px;
   }
   .exercise-card .card-desc {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: #64748B;
     line-height: 1.4;
+    flex: 1;
   }
   .exercise-card .card-badges {
     display: flex;
     gap: 0.4rem;
-    flex-wrap: wrap;
-    margin-top: 0.3rem;
+    flex-shrink: 0;
   }
   .badge-diff, .badge-tag {
     font-size: 0.7rem;
@@ -234,51 +243,67 @@
     <div class="cards-grid">
       <a href="/checkboxes" class="exercise-card" data-name="checkboxes">
         <div class="card-icon">☑️</div>
+        <div class="card-body">
         <div class="card-name">Checkboxes</div>
         <div class="card-desc">Select and deselect checkbox elements.</div>
         <div class="card-badges"><span class="badge-diff badge-beginner">Beginner</span></div>
+        </div>
       </a>
       <a href="/dropdown" class="exercise-card" data-name="dropdown">
         <div class="card-icon">🔽</div>
+        <div class="card-body">
         <div class="card-name">Dropdown</div>
         <div class="card-desc">Interact with HTML select dropdown menus.</div>
         <div class="card-badges"><span class="badge-diff badge-beginner">Beginner</span></div>
+        </div>
       </a>
       <a href="/inputs" class="exercise-card" data-name="inputs">
         <div class="card-icon">⌨️</div>
+        <div class="card-body">
         <div class="card-name">Inputs</div>
         <div class="card-desc">Type into and manipulate input fields.</div>
         <div class="card-badges"><span class="badge-diff badge-beginner">Beginner</span></div>
+        </div>
       </a>
       <a href="/key_presses" class="exercise-card" data-name="key presses">
         <div class="card-icon">🎹</div>
+        <div class="card-body">
         <div class="card-name">Key Presses</div>
         <div class="card-desc">Detect and interact with keyboard key events.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/radio_buttons" class="exercise-card" data-name="radio buttons">
         <div class="card-icon">🔘</div>
+        <div class="card-body">
         <div class="card-name">Radio Buttons</div>
         <div class="card-desc">Work with radio button groups and selections.</div>
         <div class="card-badges"><span class="badge-diff badge-beginner">Beginner</span></div>
+        </div>
       </a>
       <a href="/registration_form" class="exercise-card" data-name="registration form">
         <div class="card-icon">📝</div>
+        <div class="card-body">
         <div class="card-name">Registration Form</div>
         <div class="card-desc">Fill out and submit a complete registration form.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/horizontal_slider" class="exercise-card" data-name="horizontal slider">
         <div class="card-icon">🎚️</div>
+        <div class="card-body">
         <div class="card-name">Horizontal Slider</div>
         <div class="card-desc">Control a range slider element precisely.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/tinymce" class="exercise-card" data-name="wysiwyg editor tinymce">
         <div class="card-icon">✍️</div>
+        <div class="card-body">
         <div class="card-name">WYSIWYG Editor</div>
         <div class="card-desc">Automate a rich text (TinyMCE) editor inside an iframe.</div>
         <div class="card-badges"><span class="badge-diff badge-advanced">Advanced</span></div>
+        </div>
       </a>
     </div>
   </div>
@@ -289,21 +314,27 @@
     <div class="cards-grid">
       <a href="/login" class="exercise-card" data-name="login page">
         <div class="card-icon">🔑</div>
+        <div class="card-body">
         <div class="card-name">Login Page</div>
         <div class="card-desc">Automate login with valid and invalid credentials.</div>
         <div class="card-badges"><span class="badge-diff badge-beginner">Beginner</span></div>
+        </div>
       </a>
       <a href="/basic_auth" class="exercise-card" data-name="basic auth">
         <div class="card-icon">🛡️</div>
+        <div class="card-body">
         <div class="card-name">Basic Auth</div>
         <div class="card-desc">Handle HTTP Basic Authentication. (user &amp; pass: admin)</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/forgot_password" class="exercise-card" data-name="forgot password">
         <div class="card-icon">🔒</div>
+        <div class="card-body">
         <div class="card-name">Forgot Password</div>
         <div class="card-desc">Automate the password recovery flow.</div>
         <div class="card-badges"><span class="badge-diff badge-beginner">Beginner</span></div>
+        </div>
       </a>
     </div>
   </div>
@@ -314,57 +345,75 @@
     <div class="cards-grid">
       <a href="/abtest" class="exercise-card" data-name="a/b testing abtest">
         <div class="card-icon">🧪</div>
+        <div class="card-body">
         <div class="card-name">A/B Testing</div>
         <div class="card-desc">Handle pages that render different content on each load.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/disappearing_elements" class="exercise-card" data-name="disappearing elements">
         <div class="card-icon">👻</div>
+        <div class="card-body">
         <div class="card-name">Disappearing Elements</div>
         <div class="card-desc">Find elements that may or may not appear on the page.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/dynamic_content" class="exercise-card" data-name="dynamic content">
         <div class="card-icon">🔄</div>
+        <div class="card-body">
         <div class="card-name">Dynamic Content</div>
         <div class="card-desc">Work with page content that changes on every reload.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/dynamic_controls" class="exercise-card" data-name="dynamic controls">
         <div class="card-icon">🎛️</div>
+        <div class="card-body">
         <div class="card-name">Dynamic Controls</div>
         <div class="card-desc">Interact with controls that appear and disappear dynamically.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/dynamic_loading" class="exercise-card" data-name="dynamic loading">
         <div class="card-icon">⏳</div>
+        <div class="card-body">
         <div class="card-name">Dynamic Loading</div>
         <div class="card-desc">Wait for content that loads asynchronously after a trigger.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/entry_ad" class="exercise-card" data-name="entry ad modal">
         <div class="card-icon">📢</div>
+        <div class="card-body">
         <div class="card-name">Entry Ad</div>
         <div class="card-desc">Handle a modal/popup that appears when the page loads.</div>
         <div class="card-badges"><span class="badge-diff badge-beginner">Beginner</span></div>
+        </div>
       </a>
       <a href="/exit_intent" class="exercise-card" data-name="exit intent">
         <div class="card-icon">🚪</div>
+        <div class="card-body">
         <div class="card-name">Exit Intent</div>
         <div class="card-desc">Trigger and handle an exit-intent popup modal.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/notification_message" class="exercise-card" data-name="notification messages">
         <div class="card-icon">🔔</div>
+        <div class="card-body">
         <div class="card-name">Notification Messages</div>
         <div class="card-desc">Verify flash notification messages after actions.</div>
         <div class="card-badges"><span class="badge-diff badge-beginner">Beginner</span></div>
+        </div>
       </a>
       <a href="/typos" class="exercise-card" data-name="typos">
         <div class="card-icon">🔤</div>
+        <div class="card-body">
         <div class="card-name">Typos</div>
         <div class="card-desc">Detect text that randomly contains typos on each load.</div>
         <div class="card-badges"><span class="badge-diff badge-advanced">Advanced</span></div>
+        </div>
       </a>
     </div>
   </div>
@@ -375,21 +424,27 @@
     <div class="cards-grid">
       <a href="/download" class="exercise-card" data-name="file download">
         <div class="card-icon">⬇️</div>
+        <div class="card-body">
         <div class="card-name">File Download</div>
         <div class="card-desc">Automate downloading files from a list of links.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/upload" class="exercise-card" data-name="file upload">
         <div class="card-icon">⬆️</div>
+        <div class="card-body">
         <div class="card-name">File Upload</div>
         <div class="card-desc">Automate uploading a file using a file input field.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/download_secure" class="exercise-card" data-name="secure file download">
         <div class="card-icon">🔐</div>
+        <div class="card-body">
         <div class="card-name">Secure File Download</div>
         <div class="card-desc">Download a file from a page that requires authentication.</div>
         <div class="card-badges"><span class="badge-diff badge-advanced">Advanced</span></div>
+        </div>
       </a>
     </div>
   </div>
@@ -400,75 +455,99 @@
     <div class="cards-grid">
       <a href="/add_remove_elements/" class="exercise-card" data-name="add remove elements">
         <div class="card-icon">➕</div>
+        <div class="card-body">
         <div class="card-name">Add/Remove Elements</div>
         <div class="card-desc">Dynamically add and remove elements on a page.</div>
         <div class="card-badges"><span class="badge-diff badge-beginner">Beginner</span></div>
+        </div>
       </a>
       <a href="/broken_images" class="exercise-card" data-name="broken images">
         <div class="card-icon">🖼️</div>
+        <div class="card-body">
         <div class="card-name">Broken Images</div>
         <div class="card-desc">Find images that are broken or fail to load.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/challenging_dom" class="exercise-card" data-name="challenging dom">
         <div class="card-icon">🧩</div>
+        <div class="card-body">
         <div class="card-name">Challenging DOM</div>
         <div class="card-desc">Work with complex, hard-to-target DOM structures.</div>
         <div class="card-badges"><span class="badge-diff badge-advanced">Advanced</span></div>
+        </div>
       </a>
       <a href="/clickable" class="exercise-card" data-name="clickable">
         <div class="card-icon">👆</div>
+        <div class="card-body">
         <div class="card-name">Clickable</div>
         <div class="card-desc">Practice clicking various types of elements.</div>
         <div class="card-badges"><span class="badge-diff badge-beginner">Beginner</span></div>
+        </div>
       </a>
       <a href="/double_click" class="exercise-card" data-name="double click">
         <div class="card-icon">👆👆</div>
+        <div class="card-body">
         <div class="card-name">Double Click</div>
         <div class="card-desc">Perform double-click actions on elements.</div>
         <div class="card-badges"><span class="badge-diff badge-beginner">Beginner</span></div>
+        </div>
       </a>
       <a href="/drag_and_drop" class="exercise-card" data-name="drag and drop">
         <div class="card-icon">↔️</div>
+        <div class="card-body">
         <div class="card-name">Drag and Drop</div>
         <div class="card-desc">Simulate drag-and-drop between elements.</div>
         <div class="card-badges"><span class="badge-diff badge-advanced">Advanced</span></div>
+        </div>
       </a>
       <a href="/hovers" class="exercise-card" data-name="hovers">
         <div class="card-icon">🖱️</div>
+        <div class="card-body">
         <div class="card-name">Hovers</div>
         <div class="card-desc">Reveal hidden content by hovering over elements.</div>
         <div class="card-badges"><span class="badge-diff badge-beginner">Beginner</span></div>
+        </div>
       </a>
       <a href="/large" class="exercise-card" data-name="large deep dom">
         <div class="card-icon">🌲</div>
+        <div class="card-body">
         <div class="card-name">Large &amp; Deep DOM</div>
         <div class="card-desc">Navigate and query a very large, deeply nested DOM tree.</div>
         <div class="card-badges"><span class="badge-diff badge-advanced">Advanced</span></div>
+        </div>
       </a>
       <a href="/multiple_buttons" class="exercise-card" data-name="multiple buttons">
         <div class="card-icon">🔲</div>
+        <div class="card-body">
         <div class="card-name">Multiple Buttons</div>
         <div class="card-desc">Identify and interact with the correct button among many.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/shadowdom" class="exercise-card" data-name="shadow dom">
         <div class="card-icon">👥</div>
+        <div class="card-body">
         <div class="card-name">Shadow DOM</div>
         <div class="card-desc">Access and interact with elements inside a Shadow DOM.</div>
         <div class="card-badges"><span class="badge-diff badge-advanced">Advanced</span></div>
+        </div>
       </a>
       <a href="/shifting_content" class="exercise-card" data-name="shifting content">
         <div class="card-icon">📐</div>
+        <div class="card-body">
         <div class="card-name">Shifting Content</div>
         <div class="card-desc">Handle page layouts that shift unpredictably on load.</div>
         <div class="card-badges"><span class="badge-diff badge-advanced">Advanced</span></div>
+        </div>
       </a>
       <a href="/tables" class="exercise-card" data-name="sortable data tables">
         <div class="card-icon">📊</div>
+        <div class="card-body">
         <div class="card-name">Sortable Data Tables</div>
         <div class="card-desc">Sort, read, and validate data from HTML tables.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
     </div>
   </div>
@@ -479,51 +558,67 @@
     <div class="cards-grid">
       <a href="/floating_menu" class="exercise-card" data-name="floating menu">
         <div class="card-icon">📌</div>
+        <div class="card-body">
         <div class="card-name">Floating Menu</div>
         <div class="card-desc">Interact with a sticky/fixed navigation menu while scrolling.</div>
         <div class="card-badges"><span class="badge-diff badge-beginner">Beginner</span></div>
+        </div>
       </a>
       <a href="/frames" class="exercise-card" data-name="frames iframe">
         <div class="card-icon">🗂️</div>
+        <div class="card-body">
         <div class="card-name">Frames</div>
         <div class="card-desc">Switch between and interact with iframes on a page.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/nested_frames" class="exercise-card" data-name="nested frames">
         <div class="card-icon">🪆</div>
+        <div class="card-body">
         <div class="card-name">Nested Frames</div>
         <div class="card-desc">Navigate and interact within frames inside other frames.</div>
         <div class="card-badges"><span class="badge-diff badge-advanced">Advanced</span></div>
+        </div>
       </a>
       <a href="/jqueryui/menu" class="exercise-card" data-name="jquery ui menus">
         <div class="card-icon">📂</div>
+        <div class="card-body">
         <div class="card-name">JQuery UI Menus</div>
         <div class="card-desc">Navigate hierarchical jQuery UI dropdown menus.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/windows" class="exercise-card" data-name="multiple windows tabs">
         <div class="card-icon">🪟</div>
+        <div class="card-body">
         <div class="card-name">Multiple Windows</div>
         <div class="card-desc">Open and switch between multiple browser windows.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/open_new_tab" class="exercise-card" data-name="new tab">
         <div class="card-icon">➕🗂️</div>
+        <div class="card-body">
         <div class="card-name">New Tab</div>
         <div class="card-desc">Handle links that open content in a new browser tab.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/redirector" class="exercise-card" data-name="redirect link">
         <div class="card-icon">↪️</div>
+        <div class="card-body">
         <div class="card-name">Redirect Link</div>
         <div class="card-desc">Follow and verify URL redirects.</div>
         <div class="card-badges"><span class="badge-diff badge-beginner">Beginner</span></div>
+        </div>
       </a>
       <a href="/status_codes" class="exercise-card" data-name="status codes http">
         <div class="card-icon">🌐</div>
+        <div class="card-body">
         <div class="card-name">Status Codes</div>
         <div class="card-desc">Check and verify various HTTP response status codes.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
     </div>
   </div>
@@ -534,39 +629,51 @@
     <div class="cards-grid">
       <a href="/context_menu" class="exercise-card" data-name="context menu right click">
         <div class="card-icon">🖱️</div>
+        <div class="card-body">
         <div class="card-name">Context Menu</div>
         <div class="card-desc">Trigger and handle a right-click context menu.</div>
         <div class="card-badges"><span class="badge-diff badge-advanced">Advanced</span></div>
+        </div>
       </a>
       <a href="/geolocation" class="exercise-card" data-name="geolocation">
         <div class="card-icon">📍</div>
+        <div class="card-body">
         <div class="card-name">Geolocation</div>
         <div class="card-desc">Test browser Geolocation API interactions.</div>
         <div class="card-badges"><span class="badge-diff badge-advanced">Advanced</span></div>
+        </div>
       </a>
       <a href="/infinite_scroll" class="exercise-card" data-name="infinite scroll">
         <div class="card-icon">♾️</div>
+        <div class="card-body">
         <div class="card-name">Infinite Scroll</div>
         <div class="card-desc">Scroll to load more content in an infinite-scroll page.</div>
         <div class="card-badges"><span class="badge-diff badge-advanced">Advanced</span></div>
+        </div>
       </a>
       <a href="/javascript_alerts" class="exercise-card" data-name="javascript alerts popups">
         <div class="card-icon">⚠️</div>
+        <div class="card-body">
         <div class="card-name">JavaScript Alerts</div>
         <div class="card-desc">Accept, dismiss, and enter text in JS alert dialogs.</div>
         <div class="card-badges"><span class="badge-diff badge-intermediate">Intermediate</span></div>
+        </div>
       </a>
       <a href="/javascript_error" class="exercise-card" data-name="javascript error onload">
         <div class="card-icon">🐛</div>
+        <div class="card-body">
         <div class="card-name">JavaScript Error</div>
         <div class="card-desc">Detect a JavaScript error thrown during page load.</div>
         <div class="card-badges"><span class="badge-diff badge-advanced">Advanced</span></div>
+        </div>
       </a>
       <a href="/slow" class="exercise-card" data-name="slow resources performance">
         <div class="card-icon">🐢</div>
+        <div class="card-body">
         <div class="card-name">Slow Resources</div>
         <div class="card-desc">Handle pages with intentionally slow-loading resources.</div>
         <div class="card-badges"><span class="badge-diff badge-advanced">Advanced</span></div>
+        </div>
       </a>
     </div>
   </div>
